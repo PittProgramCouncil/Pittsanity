@@ -3,4 +3,6 @@ div.facts
 	background-color: #888888;
 	width: 1000px;
 	height: 500px;
+	
+	margin: 0px auto;
 }

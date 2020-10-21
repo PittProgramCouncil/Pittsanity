@@ -1,7 +1,60 @@
-p
+div
 {
-	background-color: #ca8abf;
-	font-weight: bold;
+	background-color: #ffe653;
+	height: 15px;
+	border-top: 3px solid blue;
 	
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+div:hover ul
+{
+	display: block;
+}
+
+ul
+{
+	background-color: #ffe653;
+	
+	display: none;
+	list-style-type: none;
+	overflow: hidden;
+	
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+li 
+{
+	float: left;
+	background-color: #ffe653;
+}
+
+li p
+{
+	display: block;
+	padding: 20px 30px;
+	margin: 0px 10px;
+	border: 3px solid blue;
 	cursor: pointer; 
+	
+	background-color: #ffe653;
+	color: blue;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+li p:hover
+{
+	background-color: #f8e043;
 }
