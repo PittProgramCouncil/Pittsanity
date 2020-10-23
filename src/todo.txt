@@ -1,9 +1,0 @@
-In order of priority:
-  > Cosmetic stuff
-	- Animations for checking answers
-	- Make buttons into taskbar
-	- Change colors when win or lose
-  > fact-list.checkValues may need some extra logic.
-
-Errors:
-  > If you hit next group on the final group, weird stuff happens (clicking next round doesn't work, I think once it didn't let me move facts over between lists.)
