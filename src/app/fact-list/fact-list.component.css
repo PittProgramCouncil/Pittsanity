@@ -1,44 +1,66 @@
 .factListsContainer
 {
-	background-color: pink;
-	width: 700px;
+	background-color: #5e3e27;
+	height: 100%;
+	width: auto;
 	margin: 0px auto;
 }
 
 .example-container
 {
+	height: 100%;
 	display: inline-block;
-	margin: 30px;
-	border: red 1px solid;
+	margin: 0px 30px;
 	vertical-align: top;
 }
 
 .example-list 
 {
-	width: 300px;
+	width: 450px;
 	max-width: 100%;
-	border: solid 1px #ccc;
 	min-height: 60px;
 	display: block;
 	border-radius: 4px;
 	overflow: hidden;
+	
+	border: red 1px solid;
+}
+
+div #new-facts-list
+{
+	position: relative;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);  
+    transform: translate(-50%, -50%);   
 }
 
 .example-box 
 {
-	width: 300px;
+	background: #1198e1;
+	
+	width: 420;
+	height: 40px;
 	padding: 20px 10px;
 	margin: 15px;
-	border-bottom: solid 1px #ccc;
-	color: rgba(0, 0, 0, 0.87);
+	
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
 	box-sizing: border-box;
 	cursor: move;
-	background: white;
-	font-size: 14px;
+}
+
+.example-box p
+{
+	margin: 0px auto;
+	
+	font-family: "Franklin Gothic Medium";
+	font-size: 20px;
+	font-weight: 600;
+	text-align: center;
+	color: white;
 }
 
 .cdk-drag-preview {
