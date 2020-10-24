@@ -51,6 +51,12 @@ export class FactListComponent implements OnInit {
 			this.checkValues();
 			this.eventFlagsService.checkAnswersFlag = false;
 		}
+		
+		if(this.eventFlagsService.playRotationsFlag == true)
+		{
+			this.playRotations();
+			this.eventFlagsService.playRotationsFlag = false;
+		}
 	}
 
 	drop(event: CdkDragDrop<String[]>) 
@@ -106,5 +112,19 @@ export class FactListComponent implements OnInit {
 		else { console.log("YOU LOSE"); }
 		
 		return win;
+	}
+	
+	playRotations() : void
+	{
+		var spinner = document.getElementsByClassName("spinner")[0];
+		
+		if(spinner.style.animationPlayState == "paused")
+		{
+			spinner.style.animationPlayState = "running";
+		}
+		else
+		{
+			spinner.style.animationPlayState = "paused";
+		}
 	}
 }
