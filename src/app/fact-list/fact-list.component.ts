@@ -14,8 +14,16 @@ export class FactListComponent implements OnInit {
 
 	newFacts = [];
 	finalFacts = [];
-	revealValues = false;
 	title = "";
+	/*	roundWon: Keeps track of whether or not the player has put the facts correctly in descending order.
+	/	Used to decide which animation to play when reseting the background color when proceeding to the next
+	/	round or group.
+	/
+	/	-1: neutral, no data (used as initial value at the start of each new group since there is no previous round)
+	/	0: facts were put in wrong order
+	/	1: facts were put in correct order
+	*/
+	roundWon = -1;
 
   
 	constructor(private factService: FactService, private eventFlagsService: EventFlagsService) { }
@@ -29,6 +37,8 @@ export class FactListComponent implements OnInit {
 	{
 		if(this.eventFlagsService.nextRoundFlag == true)
 		{
+			this.resetWinLoseBackground();
+			
 			//If the player did not put all of the round's fact onto the board, the next round shall not start.
 			if(this.newFacts.length == 0)
 			{
@@ -40,7 +50,10 @@ export class FactListComponent implements OnInit {
 		
 		if(this.eventFlagsService.nextGroupFlag == true)
 		{
+			this.resetWinLoseBackground();
+			
 			//The next group may be started at any time (for now).
+			this.roundWon = -1;
 			this.finalFacts = [];
 			this.getNextGroup();
 			this.eventFlagsService.nextGroupFlag = false;
@@ -48,14 +61,8 @@ export class FactListComponent implements OnInit {
 		
 		if(this.eventFlagsService.checkAnswersFlag == true)
 		{
-			this.checkValues();
+			this.roundWon = this.checkValues();
 			this.eventFlagsService.checkAnswersFlag = false;
-		}
-		
-		if(this.eventFlagsService.playRotationsFlag == true)
-		{
-			this.playRotations();
-			this.eventFlagsService.playRotationsFlag = false;
 		}
 	}
 
@@ -93,38 +100,95 @@ export class FactListComponent implements OnInit {
 	//checkValues also flips the value of this.revealValues, which will reveal or hide the number values of each fact.
 	checkValues() : boolean
 	{
-		this.revealValues = !this.revealValues;
+		if(this.finalFacts.length == 0)
+		{
+			return false;
+		}
 		
 		var win = true;
 		
-		//Check to see if this.finalFacts has no inversions. finalFacts[0] corresponds to the topmost fact
-		//as displayed on the webpage, so you have to check that the array is in decreasing order.
-		for(var i = 0; i < this.finalFacts.length - 1; ++i)
+		//this.finalFacts[0] corresponds to the topmost fact as displayed on the webpage, 
+		//so you have to check that the array is in decreasing order.
+		for(var i = 0; i < this.finalFacts.length; ++i)
 		{
-			if(this.finalFacts[i].value < this.finalFacts[i + 1].value)
+			this.finalFacts[i].revealed = 1;
+			
+			//Check if finalFacts has an inversion. If so, the group that is playing loses.
+			if( (i < this.finalFacts.length - 1) && (this.finalFacts[i].value < this.finalFacts[i + 1].value) )
 			{
 				win = false;
-				break;
 			}
 		}
 		
-		if(win) { console.log("YOU WIN"); }
-		else { console.log("YOU LOSE"); }
+		this.playRevealAnimation();
+		this.playWinLoseAnimation(win);
 		
 		return win;
 	}
 	
-	playRotations() : void
+	playRevealAnimation() : void
 	{
-		var spinner = document.getElementsByClassName("spinner")[0];
+		var animated_elements = Array.from(document.getElementsByClassName("animated") as HTMLCollectionOf<HTMLElement>);
 		
-		if(spinner.style.animationPlayState == "paused")
+		for(var i = 0; i < animated_elements.length; ++i)
 		{
-			spinner.style.animationPlayState = "running";
+			//For some reason, the element's animationPlayState is an empty string when the page is first loaded.
+			if(animated_elements[i].style.animationPlayState == "paused" || animated_elements[i].style.animationPlayState == "")
+			{
+				animated_elements[i].style.animationPlayState = "running";
+			}
+			else
+			{
+				animated_elements[i].style.animationPlayState = "paused";
+			}
 		}
-		else
+	}
+	
+	playWinLoseAnimation(win) : void
+	{
+		var animated_elements = Array.from(document.getElementsByClassName("factListsContainer") as HTMLCollectionOf<HTMLElement>);
+		
+		for(var i = 0; i < animated_elements.length; ++i)
+		{		
+			//For some reason, the element's animationPlayState is an empty string when the page is first loaded.
+			if(win)
+			{
+				//animated_elements[i].style.backgroundColor = "yellow";
+				animated_elements[i].style.animation = "win_colorize 2s ease-out forwards";
+			}
+			else
+			{
+				//animated_elements[i].style.backgroundColor = "red";
+				animated_elements[i].style.animation = "lose_colorize 2s ease-out forwards";
+			}
+			
+			animated_elements[i].style.animationDelay = "1.5s";
+			animated_elements[i].style.animationPlayState = "running";
+		}
+	}
+	
+	resetWinLoseBackground() : void
+	{
+		//No play data, previous round was neither won or lost - do nothing
+		if(this.roundWon < 0)
 		{
-			spinner.style.animationPlayState = "paused";
+			return;
+		}
+		
+		var animated_elements = Array.from(document.getElementsByClassName("factListsContainer") as HTMLCollectionOf<HTMLElement>);
+		
+		for(var i = 0; i < animated_elements.length; ++i)
+		{		
+			if(this.roundWon)
+			{
+				animated_elements[i].style.animation = "win_reset 0.5s ease forwards";
+			}
+			else
+			{
+				animated_elements[i].style.animation = "lose_reset 0.5s ease forwards";
+			}
+			
+			animated_elements[i].style.animationPlayState = "running";
 		}
 	}
 }

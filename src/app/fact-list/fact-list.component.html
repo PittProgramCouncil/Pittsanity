@@ -1,7 +1,11 @@
 <p>{{title}}</p>
 
-<div class="factListsContainer" id="stage">
-	<div class="spinner"></div>
+<div class="factListsContainer">
+	<!-->
+		<div class="test">
+			<p class="factListsContainer">FADE IN</p>
+		</div>
+	<-->
 	
 	<div class="example-container">
 		<div
@@ -12,7 +16,7 @@
 		class="example-list" id="new-facts-list"
 		(cdkDropListDropped)="drop($event)">
 			<div class="example-box" *ngFor="let item of newFacts" cdkDrag>
-				<p>{{revealValues == 1 ? item.value : item.fact}}</p>
+				<p>{{item.fact}}</p>
 			</div>
 		</div>
 	</div>
@@ -26,7 +30,7 @@
 		class="example-list" id="final-facts-list"
 		(cdkDropListDropped)="drop($event)">
 			<div class="example-box" *ngFor="let item of finalFacts" cdkDrag>
-				<p>{{revealValues == 1 ? item.value : item.fact}}</p>
+				<p class="animated">{{item.revealed == 1 ? item.value : item.fact}}</p>
 			</div>
 		</div>
 	</div>

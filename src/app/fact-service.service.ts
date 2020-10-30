@@ -20,17 +20,31 @@ export class FactService {
 	//getCurRoundFacts returns an array of objects of the form { fact, value }
 	getCurRoundFacts()
 	{
-		return this.game["" + this.curGroup]["" + this.curRound];
+		if(this.curRound >= 0)
+		{
+			return this.game["" + this.curGroup]["" + this.curRound];
+		}
+		else
+		{
+			return [];
+		}
 	}
 	
 	getCurTitle()
 	{
-		return this.game["" + this.curGroup]["title"];
+		if(this.curGroup >= 0)
+		{
+			return this.game["" + this.curGroup]["title"];
+		}
+		else
+		{
+			return "GAME OVER";
+		}
 	}
 	
 	incrementRound()
 	{
-		if(this.curRound != 2)
+		if(this.curRound != 2 && this.curRound >= 0)
 		{
 			this.curRound++;
 		}
@@ -38,10 +52,15 @@ export class FactService {
 	
 	incrementGroup()
 	{
-		if(this.curGroup != Object.keys(this.game).length)
+		if(this.curGroup != Object.keys(this.game).length - 1 && this.curGroup >= 0)
 		{
 			this.curGroup++;
 			this.curRound = 0;
+		}
+		else
+		{
+			this.curGroup = -1;
+			this.curRound = -1;
 		}
 	}
 }

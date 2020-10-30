@@ -29,9 +29,4 @@ export class ControlPanelComponent implements OnInit {
 	{
 		this.eventFlagsService.checkAnswersFlag = true;
 	}
-	
-	playRotations()
-	{
-		this.eventFlagsService.playRotationsFlag = true;
-	}
 }

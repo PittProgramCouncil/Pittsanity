@@ -1,9 +1,16 @@
-.factListsContainer
+div.factListsContainer
 {
 	background-color: #5e3e27;
 	height: 100%;
 	width: auto;
 	margin: 0px auto;
+	
+	animation: win_colorize;
+	animation-duration: 2s;
+	animation-delay: 1s;
+	animation-time-function: ease-out;
+	-webkit-animation-play-state: paused;
+	animation-play-state: paused;
 }
 
 .example-container
@@ -61,6 +68,17 @@ div #new-facts-list
 	font-weight: 600;
 	text-align: center;
 	color: white;
+	opacity: 100%;
+}
+
+.example-box p.animated
+{
+	position: relative;
+	overflow: hidden;
+
+	animation: fade_in 1s ease;
+	-webkit-animation-play-state: paused;
+	animation-play-state: paused;
 }
 
 .cdk-drag-preview {
@@ -87,65 +105,84 @@ div #new-facts-list
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 
-
-/*** ROTATION TEST ***/
-
-div.spinner
+div.test
 {
 	width: 300px;
 	height: 75px;
 	background-color: white;
 	border: black solid 2px;
-}
-
-/* These are the keyframes that describe the animated effect applied to the element .spinner */
-@keyframes spinner
-{
-    from 
-	{
-      -moz-transform: rotateX(0deg);
-      -ms-transform: rotateX(0deg);
-      transform: rotateX(0deg);
-    }
-    to 
-	{
-      -moz-transform: rotateX(-180deg);
-      -ms-transform: rotateX(-180deg);
-      transform: rotateX(-180deg);
-    }
-}
-
-/* stage refers to the element that is used as the fixed plane that the animated element rotates in relation to. */
-#stage 
-{
-	margin: 1em auto;
-	-webkit-perspective: 1200px;
-	-moz-perspective: 1200px;
-	-ms-perspective: 1200px;
-	perspective: 1200px;
-}
-
-/* spinner refers to the element that will be rotating. */
-.spinner 
-{
 	margin-left: 500px;
-	
-	-webkit-animation-name: spinner;
-	-webkit-animation-timing-function: ease-in-out;
-	-webkit-animation-iteration-count: infinite; /* Rotate 180 degrees once */
-	-webkit-animation-duration: 1s; /* Rotation takes 1 second */
-	-webkit-animation-direction: alternate;
+}
 
-	animation-name: spinner;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
-	animation-duration: 1s;
-
-	-webkit-transform-style: preserve-3d;
-	-moz-transform-style: preserve-3d;
-	-ms-transform-style: preserve-3d;
-	transform-style: preserve-3d;
-	
+div.test p.factListsContainer
+{
+	position: relative;
+	animation: win_colorize 2s ease;
 	-webkit-animation-play-state: paused;
 	animation-play-state: paused;
+	
+	text-align: center;
+}
+
+/* These are the keyframes that describe the animated effect "fade_in" */
+@keyframes fade_in
+{
+	from 
+	{
+		opacity : 100%;
+		left : -100px;
+	}
+	to 
+	{
+		opacity : 100%;
+		left : 0px;
+	}  
+}
+
+@keyframes win_colorize
+{
+	from
+	{
+		background-color: #5e3e27;
+	}
+	to
+	{
+		background-color: green;
+	}
+}
+
+@keyframes lose_colorize
+{
+	from
+	{
+		background-color: #5e3e27;
+	}
+	to
+	{
+		background-color: red;
+	}
+}
+
+@keyframes win_reset
+{
+	from
+	{
+		background-color: green;
+	}
+	to
+	{
+		background-color: #5e3e27;
+	}
+}
+
+@keyframes lose_reset
+{
+	from
+	{
+		background-color: red;
+	}
+	to
+	{
+		background-color: #5e3e27;
+	}
 }
