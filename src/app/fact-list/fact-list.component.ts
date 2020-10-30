@@ -15,6 +15,13 @@ export class FactListComponent implements OnInit {
 	newFacts = [];
 	finalFacts = [];
 	title = "";
+	
+	/*	numMistakes: The length of numMistakes keeps track of how many times the current group has put the facts in 
+	*	the incorrect order. This has to be an array because it is used to create elements in fact-list.component.html
+	*	via an *ngFor loop, which only iterates over collections and doesn't just simply take numbers for whatever reason.
+	*/
+	numMistakes = [];
+	
 	/*	roundWon: Keeps track of whether or not the player has put the facts correctly in descending order.
 	/	Used to decide which animation to play when reseting the background color when proceeding to the next
 	/	round or group.
@@ -54,6 +61,7 @@ export class FactListComponent implements OnInit {
 			
 			//The next group may be started at any time (for now).
 			this.roundWon = -1;
+			this.numMistakes = [];
 			this.finalFacts = [];
 			this.getNextGroup();
 			this.eventFlagsService.nextGroupFlag = false;
@@ -98,32 +106,50 @@ export class FactListComponent implements OnInit {
 	
 	//checkValues returns true if the facts in this.finalFacts are in order, with higher number values at the top.
 	//checkValues also flips the value of this.revealValues, which will reveal or hide the number values of each fact.
-	checkValues() : boolean
+	checkValues() : number
 	{
 		if(this.finalFacts.length == 0)
 		{
-			return false;
+			return -1;
 		}
 		
-		var win = true;
+		var correct = true;
 		
 		//this.finalFacts[0] corresponds to the topmost fact as displayed on the webpage, 
 		//so you have to check that the array is in decreasing order.
 		for(var i = 0; i < this.finalFacts.length; ++i)
 		{
-			this.finalFacts[i].revealed = 1;
-			
 			//Check if finalFacts has an inversion. If so, the group that is playing loses.
 			if( (i < this.finalFacts.length - 1) && (this.finalFacts[i].value < this.finalFacts[i + 1].value) )
 			{
-				win = false;
+				correct = false;
 			}
 		}
 		
-		this.playRevealAnimation();
-		this.playWinLoseAnimation(win);
+		//Only reveal the fact values if they are in the correct order
+		if(correct)
+		{
+			for(var i = 0; i < this.finalFacts.length; ++i)
+			{
+				this.finalFacts[i].revealed = 1;
+			}
+		}
+		else
+		{
+			this.numMistakes.push(true);
+		}
 		
-		return win;
+		this.playRevealAnimation();
+		this.playWinLoseAnimation(correct);
+		
+		if(correct)
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
 	}
 	
 	playRevealAnimation() : void
@@ -144,14 +170,14 @@ export class FactListComponent implements OnInit {
 		}
 	}
 	
-	playWinLoseAnimation(win) : void
+	playWinLoseAnimation(correct) : void
 	{
 		var animated_elements = Array.from(document.getElementsByClassName("factListsContainer") as HTMLCollectionOf<HTMLElement>);
 		
 		for(var i = 0; i < animated_elements.length; ++i)
 		{		
 			//For some reason, the element's animationPlayState is an empty string when the page is first loaded.
-			if(win)
+			if(correct)
 			{
 				//animated_elements[i].style.backgroundColor = "yellow";
 				animated_elements[i].style.animation = "win_colorize 2s ease-out forwards";

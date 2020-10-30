@@ -186,3 +186,16 @@ div.test p.factListsContainer
 		background-color: #5e3e27;
 	}
 }
+
+/* Move this */
+div.mistakesContainer
+{
+	background-color: red;
+	width:50px;
+	height: 50px;
+}
+
+div.mistakesContainer > p
+{
+	color: white;
+}
