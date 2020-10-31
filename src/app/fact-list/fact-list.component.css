@@ -1,9 +1,17 @@
+div.gameContainer
+{
+	height: 100%;
+	width: 100vw;
+	
+	display: flex;
+}
+
 div.factListsContainer
 {
 	background-color: #5e3e27;
 	height: 100%;
-	width: auto;
-	margin: 0px auto;
+	width: 80%;
+	margin: 0px;
 	
 	animation: win_colorize;
 	animation-duration: 2s;
@@ -190,12 +198,21 @@ div.test p.factListsContainer
 /* Move this */
 div.mistakesContainer
 {
+	height: 100%;
+	width: 50px;
+	flex-direction: column;
+}
+
+div.mistake
+{
 	background-color: red;
 	width:50px;
 	height: 50px;
+	margin-top: 13px;
+	margin-left: 13px;
 }
 
-div.mistakesContainer > p
+div.mistake > p
 {
 	color: white;
 }
