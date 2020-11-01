@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-winsanity": {
+    "angular-pittsanity": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-winsanity",
+            "outputPath": "dist/angular-pittsanity",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-winsanity:build"
+            "browserTarget": "angular-pittsanity:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-winsanity:build:production"
+              "browserTarget": "angular-pittsanity:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-winsanity:build"
+            "browserTarget": "angular-pittsanity:build"
           }
         },
         "test": {
@@ -110,15 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-winsanity:serve"
+            "devServerTarget": "angular-pittsanity:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-winsanity:serve:production"
+              "devServerTarget": "angular-pittsanity:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "angular-winsanity"
+  "defaultProject": "angular-pittsanity"
 }
