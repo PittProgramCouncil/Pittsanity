@@ -76,7 +76,7 @@ div #new-facts-list
 	font-weight: 600;
 	text-align: center;
 	color: white;
-	opacity: 100%;
+	opacity: 1;
 }
 
 .example-box p.animated
@@ -137,13 +137,13 @@ div.test p.factListsContainer
 {
 	from 
 	{
-		opacity : 100%;
-		left : -100px;
+		opacity: 1;
+		left: -100px;
 	}
 	to 
 	{
-		opacity : 100%;
-		left : 0px;
+		opacity: 1;
+		left: 0px;
 	}  
 }
 
@@ -206,7 +206,7 @@ div.mistakesContainer
 div.mistake
 {
 	background-color: red;
-	width:50px;
+	width: 50px;
 	height: 50px;
 	margin-top: 13px;
 	margin-left: 13px;
