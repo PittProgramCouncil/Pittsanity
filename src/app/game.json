@@ -10,6 +10,11 @@
 				"revealed" : 0
 			},
 			{
+				"fact" : "Decks on the world's largest cruise ship",
+				"value" : 18,
+				"revealed" : 0
+			},
+			{
 				"fact" : "Years since Pitt was established",
 				"value" : 233,
 				"revealed" : 0
@@ -18,20 +23,10 @@
 				"fact" : "Spaces on a Connect 4 Board",
 				"value" : 27,
 				"revealed" : 0
-			},
-			{
-				"fact" : "Decks on the world's largest cruise ship",
-				"value" : 18,
-				"revealed" : 0
 			}
 		],
 		"1" :
 		[
-			{ 
-				"fact" : "Episodes of Family Feud",
-				"value" : 3304,
-				"revealed" : 0
-			},
 			{
 				"fact" : "Calories in an Outback Steakhouse Bloomin' Onion",
 				"value" : 800,
@@ -40,6 +35,11 @@
 			{
 				"fact" : "Flavors of Ben & Jerry's Ice Cream",
 				"value" : 41,
+				"revealed" : 0
+			},
+			{ 
+				"fact" : "Episodes of Family Feud",
+				"value" : 3304,
 				"revealed" : 0
 			}
 		],
