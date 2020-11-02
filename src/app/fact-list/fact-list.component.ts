@@ -134,10 +134,6 @@ export class FactListComponent implements OnInit {
 				this.finalFacts[i].revealed = 1;
 			}
 		}
-		else
-		{
-			this.numMistakes.push(true);
-		}
 		
 		this.playRevealAnimation();
 		this.playWinLoseAnimation(correct);
@@ -212,6 +208,7 @@ export class FactListComponent implements OnInit {
 			else
 			{
 				animated_elements[i].style.animation = "lose_reset 0.5s ease forwards";
+				this.numMistakes.push(true);
 			}
 			
 			animated_elements[i].style.animationPlayState = "running";
