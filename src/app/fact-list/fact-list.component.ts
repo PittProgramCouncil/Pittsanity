@@ -201,7 +201,7 @@ export class FactListComponent implements OnInit {
 		
 		for(var i = 0; i < animated_elements.length; ++i)
 		{		
-			if(this.roundWon)
+			if(this.roundWon == 1)
 			{
 				animated_elements[i].style.animation = "win_reset 0.5s ease forwards";
 			}
@@ -213,5 +213,7 @@ export class FactListComponent implements OnInit {
 			
 			animated_elements[i].style.animationPlayState = "running";
 		}
+		
+		this.roundWon = -1;
 	}
 }
