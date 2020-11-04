@@ -42,7 +42,8 @@ export class FactListComponent implements OnInit {
 	
 	ngDoCheck()
 	{
-		if(this.eventFlagsService.nextRoundFlag == true)
+		//Only advance to next round if all of the current round's facts were placed in the correct order
+		if(this.eventFlagsService.nextRoundFlag == true && this.roundWon == 1)
 		{
 			this.resetWinLoseBackground();
 			
@@ -108,7 +109,8 @@ export class FactListComponent implements OnInit {
 	//checkValues also flips the value of this.revealValues, which will reveal or hide the number values of each fact.
 	checkValues() : number
 	{
-		if(this.finalFacts.length == 0)
+		//Do nothing if not all of the facts have been placed in finalFacts
+		if(this.newFacts.length != 0)
 		{
 			return -1;
 		}

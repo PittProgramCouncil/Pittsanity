@@ -113,23 +113,47 @@ div #new-facts-list
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 
-div.test
+div.mistakesContainer
 {
-	width: 300px;
-	height: 75px;
-	background-color: white;
-	border: black solid 2px;
-	margin-left: 500px;
+	height: 100%;
+	width: 50px;
+	flex-direction: column;
 }
 
-div.test p.factListsContainer
+div.mistake
 {
 	position: relative;
-	animation: win_colorize 2s ease;
-	-webkit-animation-play-state: paused;
-	animation-play-state: paused;
-	
+	width: 60px;
+	height: 60px;
+	margin-top: 13px;
+	margin-left: 13px;
+	border-radius: 3px;
+	background-image: linear-gradient(red, red);
+}
+
+div.mistake > p
+{
+	color: white;
 	text-align: center;
+	line-height: 2.4;
+	
+	font-family: "Franklin Gothic Medium";
+	font-size: 25px;
+	font-weight: bold;
+	text-shadow: 0px -1px #333;
+}
+
+/* Shiny effect */
+div.mistake > p:after
+{
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: calc(100% - 4px);
+	height: 50%;
+	background: linear-gradient(rgba(255,200,200,0.8), rgba(255,100,100,0.1));
+	border-radius: 2px;
 }
 
 /* These are the keyframes that describe the animated effect "fade_in" */
@@ -193,26 +217,4 @@ div.test p.factListsContainer
 	{
 		background-color: #5e3e27;
 	}
-}
-
-/* Move this */
-div.mistakesContainer
-{
-	height: 100%;
-	width: 50px;
-	flex-direction: column;
-}
-
-div.mistake
-{
-	background-color: red;
-	width: 50px;
-	height: 50px;
-	margin-top: 13px;
-	margin-left: 13px;
-}
-
-div.mistake > p
-{
-	color: white;
 }
