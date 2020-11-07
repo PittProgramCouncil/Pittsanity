@@ -1,4 +1,4 @@
-<p>{{title}}</p>
+<p class="roundTitle">{{title}}</p>
 
 <div class="gameContainer" (click)="resetWinLoseBackground()">
 	<div class="factListsContainer">
@@ -30,7 +30,7 @@
 			[cdkDropListConnectedTo]="[newFactsList]"
 			class="example-list" id="final-facts-list"
 			(cdkDropListDropped)="drop($event)">
-				<div class="example-box" *ngFor="let item of finalFacts" cdkDrag>
+				<div class="example-box" *ngFor="let item of finalFacts; let i = index" id="{{ 'fact' + i }}" cdkDrag>
 					<p class="animated">{{item.revealed == 1 ? item.value : item.fact}}</p>
 				</div>
 			</div>

@@ -1,3 +1,8 @@
+p.roundTitle
+{
+	text-align: center;
+}
+
 div.gameContainer
 {
 	height: 100%;
@@ -8,7 +13,10 @@ div.gameContainer
 
 div.factListsContainer
 {
-	background-color: #5e3e27;
+	background-image: url("../../assets/factsBackground.png");
+	background-repeat: no-repeat;
+	background-size: 100% 80%;
+	
 	height: 100%;
 	width: 80%;
 	margin: 0px;
@@ -65,6 +73,8 @@ div #new-facts-list
 	justify-content: space-between;
 	box-sizing: border-box;
 	cursor: move;
+	border: 2px #DDD solid;
+	box-shadow: 0px 5px 5px #111
 }
 
 .example-box p
@@ -103,10 +113,6 @@ div #new-facts-list
 
 .cdk-drag-animating {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-}
-
-.example-box:last-child {
-  border: none;
 }
 
 .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
