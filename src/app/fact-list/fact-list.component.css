@@ -1,6 +1,26 @@
-p.roundTitle
+div.roundTitle
 {
-	text-align: center;
+	background-color: #0092f1;
+	border: 8px solid #010647;
+	
+	width: 300px;
+	height: 50px;
+	margin: 15px;
+	
+	transform: skewX(-20deg);
+}
+
+div.roundTitle > p
+{
+	text-align: left;
+	margin: 0px;
+	margin-left: 25px;
+	
+	font-family: "Franklin Gothic Medium";
+	font-size: 24pt;
+	font-weight: bold;
+	color: white;
+	line-height: 50px;
 }
 
 div.gameContainer
@@ -13,9 +33,11 @@ div.gameContainer
 
 div.factListsContainer
 {
-	background-image: url("../../assets/factsBackground.png");
+	/*background-image: url("../../assets/factsBackground.png");
 	background-repeat: no-repeat;
-	background-size: 100% 80%;
+	background-size: 100% 80%;*/
+	background-color: #0092f1;
+	border: 8px solid #010647;
 	
 	height: 100%;
 	width: 80%;

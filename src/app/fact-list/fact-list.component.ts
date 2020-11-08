@@ -131,10 +131,7 @@ export class FactListComponent implements OnInit {
 		//Only reveal the fact values if they are in the correct order
 		if(correct)
 		{
-			for(var i = 0; i < this.finalFacts.length; ++i)
-			{
-				this.finalFacts[i].revealed = 1;
-			}
+			this.revealAnswers()
 		}
 		
 		this.playRevealAnimation();
@@ -147,6 +144,14 @@ export class FactListComponent implements OnInit {
 		else
 		{
 			return 0;
+		}
+	}
+	
+	revealAnswers() : void
+	{
+		for(var i = 0; i < this.finalFacts.length; ++i)
+		{
+			this.finalFacts[i].revealed = 1;
 		}
 	}
 	
@@ -206,14 +211,22 @@ export class FactListComponent implements OnInit {
 			if(this.roundWon == 1)
 			{
 				animated_elements[i].style.animation = "win_reset 0.5s ease forwards";
+				animated_elements[i].style.animationPlayState = "running";
 			}
 			else
 			{
-				animated_elements[i].style.animation = "lose_reset 0.5s ease forwards";
 				this.numMistakes.push(true);
-			}
-			
-			animated_elements[i].style.animationPlayState = "running";
+				
+				if(this.numMistakes.length == 3)
+				{
+					this.revealAnswers();
+				}
+				else
+				{
+					animated_elements[i].style.animation = "lose_reset 0.5s ease forwards";
+					animated_elements[i].style.animationPlayState = "running";
+				}
+			}	
 		}
 		
 		this.roundWon = -1;
