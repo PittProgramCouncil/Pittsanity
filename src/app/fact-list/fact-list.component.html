@@ -11,6 +11,8 @@
 		<-->
 		
 		<div class="example-container">
+			<div class="newFactPlaceholder" *ngFor="let item of [].constructor(4)"></div>
+			
 			<div
 			cdkDropList
 			#newFactsList="cdkDropList"
@@ -18,13 +20,15 @@
 			[cdkDropListConnectedTo]="[finalFactsList]"
 			class="example-list" id="new-facts-list"
 			(cdkDropListDropped)="drop($event)">
-				<div class="example-box" *ngFor="let item of newFacts" cdkDrag>
+				<div class="newFactBox" *ngFor="let item of newFacts" cdkDrag>
 					<p>{{item.fact}}</p>
 				</div>
 			</div>
 		</div>
 
 		<div class="example-container" id="final-facts-container">
+			<div class="finalFactPlaceholder" *ngFor="let item of [].constructor(9)"></div>
+
 			<div
 			cdkDropList
 			#finalFactsList="cdkDropList"
@@ -32,9 +36,10 @@
 			[cdkDropListConnectedTo]="[newFactsList]"
 			class="example-list" id="final-facts-list"
 			(cdkDropListDropped)="drop($event)">
-				<div class="example-box" *ngFor="let item of finalFacts; let i = index" id="{{ 'fact' + i }}" cdkDrag>
+				<div class="finalFactBox" *ngFor="let item of finalFacts; let i = index" id="{{ 'fact' + i }}" cdkDrag>
 					<p class="animated">{{item.revealed == 1 ? item.value : item.fact}}</p>
 				</div>
+				
 			</div>
 		</div>
 	</div>
