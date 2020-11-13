@@ -32,7 +32,7 @@ div.gameContainer
 	display: flex;
 }
 
-div.factListsContainer
+div.gameBackground
 {
 	background-image: url("../../assets/factsBackground.png");
 	background-repeat: no-repeat;
@@ -54,6 +54,42 @@ div.factListsContainer
 	animation-play-state: paused;
 	
 	position: absolute;
+}
+
+div.titleCard
+{
+	background-color: #0092f1;
+	border: 8px solid #010647;
+	
+	position: relative;
+	
+	height: 80%;
+	width: 80%;
+	margin: auto;
+	top: 50%;
+	transform: translate(0%, -50%);
+}
+
+div.titleCard > p
+{
+	font-family: "Franklin Gothic Medium";
+	text-align: center;
+	color: white;
+	position: relative;
+}
+
+div.titleCard > p.topLine
+{
+	font-size: 20px;
+	font-weight: 600;
+	top: 20%;
+}
+
+div.titleCard > p.pittsanity
+{
+	font-size: 40px;
+	font-weight: 600;
+	top: 20%;
 }
 
 .example-container

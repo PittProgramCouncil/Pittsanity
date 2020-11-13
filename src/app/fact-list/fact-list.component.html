@@ -3,13 +3,15 @@
 </div>
 
 <div class="gameContainer" (click)="resetWinLoseBackground()">
-	<div class="factListsContainer">
-		<!-->
-			<div class="test">
-				<p class="factListsContainer">FADE IN</p>
-			</div>
-		<-->
-		
+	
+	<div class="gameBackground" *ngIf="curGroup == -1">
+		<div class="titleCard">
+				<p class="topLine">Welcome to</p>
+				<p class="pittsanity">PittSanity</p>
+		</div>
+	</div>
+	
+	<div class="gameBackground" *ngIf="curGroup > -1">
 		<div class="example-container">
 			<div class="newFactPlaceholderContainer">
 				<div class="newFactPlaceholder" *ngFor="let item of [].constructor(4)"></div>

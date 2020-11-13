@@ -6,13 +6,9 @@ import game from "./game.json";
   providedIn: 'root'
 })
 export class FactService {
-	
-	//Ideally this would read from an external JSON file, but in Angular
-	//that requires importing httpclient, and I didn't feel like dealing 
-	//with that.
 	private game = game;
 	
-	private curGroup = 0;
+	private curGroup = -1;
 	private curRound = 0;
 				
 	constructor() { }
@@ -38,7 +34,7 @@ export class FactService {
 		}
 		else
 		{
-			return "GAME OVER";
+			return "";
 		}
 	}
 	
@@ -52,15 +48,10 @@ export class FactService {
 	
 	incrementGroup()
 	{
-		if(this.curGroup != Object.keys(this.game).length - 1 && this.curGroup >= 0)
+		if(this.curGroup != Object.keys(this.game).length - 1)
 		{
 			this.curGroup++;
 			this.curRound = 0;
-		}
-		else
-		{
-			this.curGroup = -1;
-			this.curRound = -1;
 		}
 	}
 }

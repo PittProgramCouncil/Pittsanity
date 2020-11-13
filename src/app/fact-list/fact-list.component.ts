@@ -15,6 +15,7 @@ export class FactListComponent implements OnInit {
 	newFacts = [];
 	finalFacts = [];
 	title = "";
+	curGroup = -1;
 	
 	/*	numMistakes: The length of numMistakes keeps track of how many times the current group has put the facts in 
 	*	the incorrect order. This has to be an array because it is used to create elements in fact-list.component.html
@@ -34,11 +35,6 @@ export class FactListComponent implements OnInit {
 
   
 	constructor(private factService: FactService, private eventFlagsService: EventFlagsService) { }
-
-	ngOnInit(): void {
-		this.newFacts = this.factService.getCurRoundFacts();
-		this.title = this.factService.getCurTitle();
-	}
 	
 	ngDoCheck()
 	{
@@ -102,6 +98,7 @@ export class FactListComponent implements OnInit {
 		this.newFacts = this.factService.getCurRoundFacts();
 		
 		this.title = this.factService.getCurTitle();
+		this.curGroup++;
 	}
 	
 	
