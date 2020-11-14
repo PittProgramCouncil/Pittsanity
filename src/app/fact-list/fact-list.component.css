@@ -37,7 +37,7 @@ div.gameBackground
 	background-image: url("../../assets/factsBackground.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	image-rendering: crisp-edges;
+	image-rendering: pixelated;
 	
 	background-color: #0092f1;
 	border: 8px solid #010647;
@@ -146,7 +146,7 @@ div.newFactBox, div.finalFactBox, div.newFactPlaceholder, div.finalFactPlacehold
 {
 	width: 450px;
 	height: 40px;
-	padding: 20px 10px;
+	padding: 18px 10px;
 	margin: 15px auto;
 }
 
@@ -198,9 +198,7 @@ div.finalFactPlaceholderContainer
 }
 
 div.newFactPlaceholder, div.finalFactPlaceholder
-{
-	position: relative;
-	
+{	
 	background: #fff2a8;
 	
 	border: 2px #fbdd29 solid;
@@ -211,7 +209,7 @@ div.newFactPlaceholder
 {
 	width: 450px;
 	height: 40px;
-	padding: 20px 10px;
+	padding: 18px 10px;
 	margin: 15px auto;
 }
 
@@ -227,7 +225,7 @@ div.finalFactPlaceholder
 	width: 450px;
 	height: 40px;
 	padding: 18px 10px;
-	margin: 10px auto;
+	margin: 15px auto;
 	
 	box-sizing: border-box;
 	border-radius: 4px;
@@ -240,8 +238,22 @@ div.finalFactPlaceholder
 	width: 450px;
 	height: 40px;
 	padding: 18px 10px;
-	margin: 10px auto;
 	opacity: 0;
+}
+
+.newFactBox.cdk-drag-placeholder
+{
+	margin: 15px auto;
+}
+
+.finalFactBox.cdk-drag-placeholder
+{
+	margin: 10px auto;
+}
+
+.cdk-drag-dragging 
+{
+	background-color: green;
 }
 
 .cdk-drag-animating {

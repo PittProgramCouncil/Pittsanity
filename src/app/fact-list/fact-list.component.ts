@@ -36,10 +36,21 @@ export class FactListComponent implements OnInit {
   
 	constructor(private factService: FactService, private eventFlagsService: EventFlagsService) { }
 	
+	ngOnInit()
+	{
+		this.newFacts = [];
+		this.finalFacts = [];
+		this.title = "";
+		this.curGroup = -1;
+		this.numMistakes = [];
+		this.roundWon = -1;
+	}
+	
 	ngDoCheck()
 	{
-		//Only advance to next round if all of the current round's facts were placed in the correct order
-		if(this.eventFlagsService.nextRoundFlag == true && this.roundWon == 1)
+		//Only advance to next round if all of the current round's facts were placed in the correct order,
+		//or if it is the pre-round screen where there are no facts
+		if(this.eventFlagsService.nextRoundFlag == true && (this.roundWon == 1 || this.roundWon == -1))
 		{
 			this.resetWinLoseBackground();
 			

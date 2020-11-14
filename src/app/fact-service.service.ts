@@ -9,7 +9,7 @@ export class FactService {
 	private game = game;
 	
 	private curGroup = -1;
-	private curRound = 0;
+	private curRound = -1;
 				
 	constructor() { }
 	
@@ -40,7 +40,7 @@ export class FactService {
 	
 	incrementRound()
 	{
-		if(this.curRound != 2 && this.curRound >= 0)
+		if(this.curRound != 2)
 		{
 			this.curRound++;
 		}
@@ -51,7 +51,7 @@ export class FactService {
 		if(this.curGroup != Object.keys(this.game).length - 1)
 		{
 			this.curGroup++;
-			this.curRound = 0;
+			this.curRound = -1;
 		}
 	}
 }
