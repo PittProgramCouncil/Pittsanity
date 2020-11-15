@@ -11,11 +11,12 @@ export class FactService {
 	private curGroup = -1;
 	private curRound = -1;
 				
-	constructor() { }
+	constructor() {}
 	
 	//getCurRoundFacts returns an array of objects of the form { fact, value }
 	getCurRoundFacts()
 	{
+		console.log(this.curRound);
 		if(this.curRound >= 0)
 		{
 			return this.game["" + this.curGroup]["" + this.curRound];

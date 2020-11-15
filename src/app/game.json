@@ -7,21 +7,25 @@
 			{ 
 				"fact" : "Seats in House of Representatives",
 				"value" : 435,
+				"answer" : "435 seats",
 				"revealed" : 0
 			},
 			{
 				"fact" : "Decks on the world's largest cruise ship",
 				"value" : 18,
+				"answer" : "18 decks",
 				"revealed" : 0
 			},
 			{
 				"fact" : "Years since Pitt was established",
 				"value" : 233,
+				"answer" : "233 years",
 				"revealed" : 0
 			},
 			{
 				"fact" : "Spaces on a Connect 4 Board",
 				"value" : 27,
+				"answer" : "27 spaces",
 				"revealed" : 0
 			}
 		],
@@ -30,16 +34,19 @@
 			{
 				"fact" : "Calories in an Outback Steakhouse Bloomin' Onion",
 				"value" : 800,
+				"answer" : "800 calories",
 				"revealed" : 0
 			},
 			{
 				"fact" : "Flavors of Ben & Jerry's Ice Cream",
 				"value" : 41,
+				"answer" : "41 flavors",
 				"revealed" : 0
 			},
 			{ 
 				"fact" : "Episodes of Family Feud",
 				"value" : 3304,
+				"answer" : "3,304 episodes",
 				"revealed" : 0
 			}
 		],
@@ -48,11 +55,13 @@
 			{ 
 				"fact" : "Years since 101 Dalmations was released",
 				"value" : 59,
+				"answer" : "59 years",
 				"revealed" : 0
 			},
 			{
 				"fact" : "Weight of World's Heaviest Cat",
 				"value" : 47,
+				"answer" : "47 pounds",
 				"revealed" : 0
 			}
 		]
@@ -66,21 +75,25 @@
 			{ 
 				"fact" : "Alpha",
 				"value" : 0,
+				"answer" : "test",
 				"revealed" : 0
 			},
 			{
 				"fact" : "Beta",
 				"value" : 1,
+				"answer" : "test",
 				"revealed" : 0
 			},
 			{
 				"fact" : "Delta",
 				"value" : 2,
+				"answer" : "test",
 				"revealed" : 0
 			},
 			{
 				"fact" : "Gamma",
 				"value" : 3,
+				"answer" : "test",
 				"revealed" : 0
 			}
 		],
@@ -89,16 +102,19 @@
 			{ 
 				"fact" : "Immanuel",
 				"value" : 4,
+				"answer" : "test",
 				"revealed" : 0
 			},
 			{
 				"fact" : "Jenka",
 				"value" : 5,
+				"answer" : "test",
 				"revealed" : 0
 			},
 			{
 				"fact" : "Karla",
 				"value" : 6,
+				"answer" : "test",
 				"revealed" : 0
 			}
 		],
@@ -107,11 +123,13 @@
 			{ 
 				"fact" : "XXX",
 				"value" : 7,
+				"answer" : "test",
 				"revealed" : 0
 			},
 			{
 				"fact" : "YYY",
 				"value" : 8,
+				"answer" : "test",
 				"revealed" : 0
 			}
 		]

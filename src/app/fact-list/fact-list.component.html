@@ -43,7 +43,7 @@
 			class="example-list" id="final-facts-list"
 			(cdkDropListDropped)="drop($event)">
 				<div class="finalFactBox" *ngFor="let item of finalFacts; let i = index" id="{{ 'fact' + i }}" cdkDrag>
-					<p class="animated">{{item.revealed == 1 ? item.value : item.fact}}</p>
+					<p class="animated">{{item.revealed == 1 ? item.answer : item.fact}}</p>
 				</div>
 				
 			</div>

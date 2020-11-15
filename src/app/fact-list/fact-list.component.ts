@@ -12,6 +12,7 @@ import { EventFlagsService } from '../event-flags.service';
 })
 export class FactListComponent implements OnInit {
 
+	isTitleScreen = true;
 	newFacts = [];
 	finalFacts = [];
 	title = "";
@@ -32,35 +33,43 @@ export class FactListComponent implements OnInit {
 	/	1: facts were put in correct order
 	*/
 	roundWon = -1;
+	
+	/*	correctOrder: Because roundWon is set to -1 every time the background animation is reset, another boolean is needed
+	*	to disable the nextRound button until the facts are placed in the correct order. The fact that I need this variable in 
+	*	the first place shows how unelegant this code is, but finals week is killing me.
+	*/
+	correctOrder = true;
 
   
 	constructor(private factService: FactService, private eventFlagsService: EventFlagsService) { }
 	
 	ngOnInit()
 	{
+		this.isTitleScreen = true;
 		this.newFacts = [];
 		this.finalFacts = [];
 		this.title = "";
 		this.curGroup = -1;
 		this.numMistakes = [];
 		this.roundWon = -1;
+		this.correctOrder = true;
 	}
 	
 	ngDoCheck()
 	{
 		//Only advance to next round if all of the current round's facts were placed in the correct order,
 		//or if it is the pre-round screen where there are no facts
-		if(this.eventFlagsService.nextRoundFlag == true && (this.roundWon == 1 || this.roundWon == -1))
+		if(this.eventFlagsService.nextRoundFlag == true && this.correctOrder)
 		{
+			this.correctOrder = false;
 			this.resetWinLoseBackground();
 			
 			//If the player did not put all of the round's fact onto the board, the next round shall not start.
-			if(this.newFacts.length == 0)
+			if(this.newFacts.length == 0 && !this.isTitleScreen)
 			{
 				this.getNextRoundFacts();
 			}
 		
-			this.eventFlagsService.nextRoundFlag = false;
 		}
 		
 		if(this.eventFlagsService.nextGroupFlag == true)
@@ -68,18 +77,24 @@ export class FactListComponent implements OnInit {
 			this.resetWinLoseBackground();
 			
 			//The next group may be started at any time (for now).
+			this.isTitleScreen = false;
+			this.correctOrder = true;
 			this.roundWon = -1;
 			this.numMistakes = [];
 			this.finalFacts = [];
 			this.getNextGroup();
-			this.eventFlagsService.nextGroupFlag = false;
+			
 		}
 		
 		if(this.eventFlagsService.checkAnswersFlag == true)
 		{
 			this.roundWon = this.checkValues();
-			this.eventFlagsService.checkAnswersFlag = false;
+			
 		}
+		
+		this.eventFlagsService.nextRoundFlag = false;
+		this.eventFlagsService.nextGroupFlag = false;
+		this.eventFlagsService.checkAnswersFlag = false;
 	}
 
 	drop(event: CdkDragDrop<String[]>) 
@@ -147,10 +162,12 @@ export class FactListComponent implements OnInit {
 		
 		if(correct)
 		{
+			this.correctOrder = true; //I forget if JS equates 1 with true and 0 with false
 			return 1;
 		}
 		else
 		{
+			this.correctOrder = false;
 			return 0;
 		}
 	}
@@ -183,19 +200,17 @@ export class FactListComponent implements OnInit {
 	
 	playWinLoseAnimation(correct) : void
 	{
-		var animated_elements = Array.from(document.getElementsByClassName("factListsContainer") as HTMLCollectionOf<HTMLElement>);
+		var animated_elements = Array.from(document.getElementsByClassName("gameBackground") as HTMLCollectionOf<HTMLElement>);
 		
 		for(var i = 0; i < animated_elements.length; ++i)
 		{		
 			//For some reason, the element's animationPlayState is an empty string when the page is first loaded.
 			if(correct)
 			{
-				//animated_elements[i].style.backgroundColor = "yellow";
 				animated_elements[i].style.animation = "win_colorize 2s ease-out forwards";
 			}
 			else
 			{
-				//animated_elements[i].style.backgroundColor = "red";
 				animated_elements[i].style.animation = "lose_colorize 2s ease-out forwards";
 			}
 			
@@ -212,7 +227,7 @@ export class FactListComponent implements OnInit {
 			return;
 		}
 		
-		var animated_elements = Array.from(document.getElementsByClassName("factListsContainer") as HTMLCollectionOf<HTMLElement>);
+		var animated_elements = Array.from(document.getElementsByClassName("gameBackground") as HTMLCollectionOf<HTMLElement>);
 		
 		for(var i = 0; i < animated_elements.length; ++i)
 		{		
