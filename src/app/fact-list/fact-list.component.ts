@@ -164,36 +164,9 @@ export class FactListComponent implements OnInit {
 		{
 			this.correctOrder = true; //I forget if JS equates 1 with true and 0 with false
 			return 1;
-			
-			//Reset all fact backgrounds to blue
-			for(var i = 0; i < this.finalFacts.length; ++i)
-			{
-				var factElement = document.getElementById("fact" + i) as HTMLElement;
-				factElement.style.backgroundColor = "#1198e1";
-				factElement.style.borderColor = "#ddd";
-			}
 		}
 		else
-		{
-			//Change colors of any facts that are in the wrong order
-			var outOfOrderIndices = this.getOutOfOrderFactsIndices();
-			console.log(outOfOrderIndices);
-			for(var i = 0; i < this.finalFacts.length; ++i)
-			{
-				var factElement = document.getElementById("fact" + i) as HTMLElement;
-				
-				if(outOfOrderIndices.includes(i))
-				{
-					factElement.style.backgroundColor = "#ff7f27";
-					factElement.style.borderColor = "#ffc90e";
-				}
-				else
-				{
-					factElement.style.backgroundColor = "#1198e1";
-					factElement.style.borderColor = "#ddd";
-				}
-			}
-			
+		{	
 			this.correctOrder = false;
 			return 0;
 		}
@@ -281,68 +254,4 @@ export class FactListComponent implements OnInit {
 		
 		this.roundWon = -1;
 	}
-	
-	//Returns the indices of the fewest number of final facts that need to be moved in order to put all the
-	//facts in the correct order.
-	getOutOfOrderFactsIndices()
-	{
-		if(this.finalFacts.length == 0)
-		{
-			return [];
-		}
-		
-		//For some reason, getting this algorithm to find the longest set of indices whose values are
-		//in decreasing order isn't as simple as flipping the sign in the double for loop. You have to
-		//also reverse the input array.
-		var finalFactsReverse = this.finalFacts.slice();
-		finalFactsReverse.reverse();
-		
-		var L = [];
-		var n = finalFactsReverse.length;
-		for(var i = 0; i < n; i++)
-		{
-			L.push([]);
-		}
-
-		//Set L[0] to [0];
-		L[0].push(0);
-
-		//Dynamically find longest set of indices whose facts are in increasing order
-		for(var i = 1; i < n; i++)
-		{
-			for(var j = 0; j < i; j++)
-			{
-				if((finalFactsReverse[i].value < finalFactsReverse[j].value) && (L[i].length < L[j].length + 1))
-				{
-					L[i] = L[j];
-				}
-			}
-			
-			L[i].push(i);
-		}
-
-		var max = L[0];
-
-		for(var i = 0; i < n; ++i)
-		{
-			if(L[i].length > max.length)
-			{
-				max = L[i];
-			}
-		}
-
-		//After finding the longest set of indices in increasing order of fact value, every index that
-		//is not in this set is out of order
-		var outOfOrderIndices = [];
-		for(var i = 0; i < n; ++i)
-		{
-		  if(!max.includes(i))
-		  {
-			  outOfOrderIndices.push(i);
-		  }
-		}
-
-		return outOfOrderIndices;
-	}
-
 }
