@@ -1,5 +1,11 @@
-<div class="roundTitle">
-	<p>{{title}}</p>
+<div class="topHUD">
+	<div class="roundTitle">
+		<p>{{title}}</p>
+	</div>
+
+	<div class="timerContainer">
+		<p *ngIf="timeRemaining >= 0">{{timeRemaining}}</p>
+	</div>
 </div>
 
 <div class="gameContainer" (click)="resetWinLoseBackground()">

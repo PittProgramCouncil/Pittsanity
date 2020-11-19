@@ -1,16 +1,33 @@
-div.roundTitle
+div.topHUD
 {
+	width: 81vw;
+}
+
+div.topHUD > div
+{
+	position: relative;
+	
 	background-color: #0092f1;
 	border: 8px solid #010647;
 	
 	width: 300px;
 	height: 50px;
 	margin: 15px;
-	
-	transform: skewX(-20deg);
 }
 
-div.roundTitle > p
+div.roundTitle
+{
+	transform: skewX(-20deg);
+	float: left;
+}
+
+div.timerContainer
+{
+	transform: skewX(20deg);
+	float: right;
+}
+
+div.topHUD > div > p
 {
 	text-align: left;
 	margin: 0px;
@@ -19,6 +36,7 @@ div.roundTitle > p
 	font-family: "Franklin Gothic Medium";
 	font-size: 24pt;
 	font-weight: bold;
+	letter-spacing: 1px;
 	color: white;
 	line-height: 50px;
 }
