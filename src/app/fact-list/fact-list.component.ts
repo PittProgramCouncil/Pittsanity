@@ -104,7 +104,7 @@ export class FactListComponent implements OnInit {
 			this.startTimer();
 		}
 		
-		if(this.eventFlagsService.nextGroupFlag == true)
+		if(this.eventFlagsService.nextGroupFlag == true && this.curGroup < 9)
 		{
 			this.resetWinLoseBackground();
 			
@@ -119,15 +119,25 @@ export class FactListComponent implements OnInit {
 			
 		}
 		
+		if(this.eventFlagsService.prevGroupFlag == true && this.curGroup > 0)
+		{
+			this.resetWinLoseBackground();
+			
+			this.correctOrder = true;
+			this.roundWon = -1;
+			this.curRound = -1;
+			this.numMistakes = [];
+			this.finalFacts = [];
+			this.getPrevGroup();
+		}
+		
 		if(this.eventFlagsService.checkAnswersFlag == true)
 		{
 			this.roundWon = this.checkValues();
 			
 		}
 		
-		this.eventFlagsService.nextRoundFlag = false;
-		this.eventFlagsService.nextGroupFlag = false;
-		this.eventFlagsService.checkAnswersFlag = false;
+		this.eventFlagsService.clearFlags();
 	}
 
 	drop(event: CdkDragDrop<String[]>) 
@@ -158,6 +168,15 @@ export class FactListComponent implements OnInit {
 		
 		this.title = this.factService.getCurTitle();
 		this.curGroup++;
+	}
+	
+	getPrevGroup()
+	{
+		this.factService.decrementGroup();
+		this.newFacts = this.factService.getCurRoundFacts();
+		
+		this.title = this.factService.getCurTitle();
+		this.curGroup--;
 	}
 	
 	

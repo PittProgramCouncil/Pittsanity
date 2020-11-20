@@ -55,4 +55,13 @@ export class FactService {
 			this.curRound = -1;
 		}
 	}
+	
+	decrementGroup()
+	{
+		if(this.curGroup > 0)
+		{
+			this.curGroup--;
+			this.curRound = -1;
+		}
+	}
 }

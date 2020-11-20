@@ -12,12 +12,12 @@ div.taskbarDiv
 	margin: 0px;
 }
 
-div:hover ul
+div:hover ul.taskbar
 {
 	display: block;
 }
 
-ul
+ul.taskbar
 {
 	background: #fff2a8;
 	border-top: 5px solid #fbdd29;
@@ -40,7 +40,7 @@ li
 	background-color: #fff2a8;
 }
 
-li.nextGroup, li.dividerRight, li.revealAnswers
+li.nextGroup, li.dividerRight, li.prevGroup
 {
 	float: right;
 }
@@ -57,7 +57,6 @@ li p
 	font-size: 16pt;
 	color: #010647;
 	text-align: center;
-	
 }
 
 li p:hover
