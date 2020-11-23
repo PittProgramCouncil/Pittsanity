@@ -124,7 +124,6 @@ div.titleCard > p.pittsanity
 	z-index: 100;
 	
 	max-width: 100%;
-	min-height: 60px;
 	display: block;
 	border-radius: 4px;
 	overflow: hidden;
@@ -137,12 +136,14 @@ div #new-facts-list
     top: 114px;
     left: 55px;
 	width: 450px;
+	min-height: 220px;
 }
 
 div #final-facts-list
 {
 	right: 60px;
 	width: 450px;
+	min-height: 480px;
 }
 
 div.newFactBox, div.finalFactBox, div.newFactPlaceholder, div.finalFactPlaceholder

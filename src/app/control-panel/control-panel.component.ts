@@ -34,4 +34,9 @@ export class ControlPanelComponent implements OnInit {
 	{
 		this.eventFlagsService.checkAnswersFlag = true;
 	}
+	
+	startClock()
+	{
+		this.eventFlagsService.startClockFlag = true;
+	}
 }

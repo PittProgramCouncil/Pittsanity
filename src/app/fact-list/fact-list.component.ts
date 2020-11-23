@@ -5,6 +5,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 import { FactService } from '../fact-service.service';
 import { EventFlagsService } from '../event-flags.service';
 import { timer } from 'rxjs';
+import { ClockPipe } from '../clock.pipe';
 
 @Component({
   selector: 'app-fact-list',
@@ -43,6 +44,7 @@ export class FactListComponent implements OnInit {
 	correctOrder = true;
 	
 	timeRemaining = -1;
+	clockSpeed = 0;
 	interval;
 	subscribeTimer: any;
 
@@ -61,18 +63,14 @@ export class FactListComponent implements OnInit {
 		this.roundWon = -1;
 		this.correctOrder = true;
 		this.timeRemaining = -1;
+		this.startTimer();
 	}
 	
 	ngDoCheck()
 	{
-		if(this.timeRemaining == 0)
-		{
-			//checkValues? And then \
-		}
-		
 		//Only advance to next round if all of the current round's facts were placed in the correct order,
 		//or if it is the pre-round screen where there are no facts
-		if(this.eventFlagsService.nextRoundFlag == true && this.correctOrder)
+		if(this.eventFlagsService.nextRoundFlag == true && this.correctOrder && this.curRound < 2)
 		{
 			this.correctOrder = false;
 			this.resetWinLoseBackground();
@@ -85,14 +83,13 @@ export class FactListComponent implements OnInit {
 			}
 			
 			//Set time limit based on round number
-			console.log(this.curRound);
 			switch(this.curRound)
 			{
 				case 0:
-					this.timeRemaining = 10;
+					this.timeRemaining = 90;
 					break;
 				case 1: 
-					this.timeRemaining = 20;
+					this.timeRemaining = 60;
 					break;
 				case 2:
 					this.timeRemaining = 30;
@@ -101,7 +98,7 @@ export class FactListComponent implements OnInit {
 					this.timeRemaining = -1;
 			}
 					
-			this.startTimer();
+			this.clockSpeed = 0;
 		}
 		
 		if(this.eventFlagsService.nextGroupFlag == true && this.curGroup < 9)
@@ -113,7 +110,10 @@ export class FactListComponent implements OnInit {
 			this.correctOrder = true;
 			this.roundWon = -1;
 			this.curRound = -1;
+			this.timeRemaining = -1;
+			this.clockSpeed = 0;
 			this.numMistakes = [];
+			this.newFacts = [];
 			this.finalFacts = [];
 			this.getNextGroup();
 			
@@ -126,7 +126,9 @@ export class FactListComponent implements OnInit {
 			this.correctOrder = true;
 			this.roundWon = -1;
 			this.curRound = -1;
+			this.timeRemaining = -1;
 			this.numMistakes = [];
+			this.newFacts = [];
 			this.finalFacts = [];
 			this.getPrevGroup();
 		}
@@ -135,6 +137,11 @@ export class FactListComponent implements OnInit {
 		{
 			this.roundWon = this.checkValues();
 			
+		}
+		
+		if(this.eventFlagsService.startClockFlag == true)
+		{
+			this.clockSpeed = 1;
 		}
 		
 		this.eventFlagsService.clearFlags();
@@ -164,7 +171,6 @@ export class FactListComponent implements OnInit {
 	getNextGroup()
 	{
 		this.factService.incrementGroup();
-		this.newFacts = this.factService.getCurRoundFacts();
 		
 		this.title = this.factService.getCurTitle();
 		this.curGroup++;
@@ -173,7 +179,6 @@ export class FactListComponent implements OnInit {
 	getPrevGroup()
 	{
 		this.factService.decrementGroup();
-		this.newFacts = this.factService.getCurRoundFacts();
 		
 		this.title = this.factService.getCurTitle();
 		this.curGroup--;
@@ -321,13 +326,12 @@ export class FactListComponent implements OnInit {
 		this.interval = setInterval(() => {
 			if(this.timeRemaining > 0)
 			{
-				this.timeRemaining--;
+				this.timeRemaining -= this.clockSpeed;
 			}
 			else
 			{
-				this.timeRemaining = 0;
+				//this.timeRemaining = 0;
 			}
 		},1000)
 	}
-
 }
