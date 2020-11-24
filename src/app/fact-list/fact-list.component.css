@@ -64,13 +64,6 @@ div.gameBackground
 	width: 80%;
 	margin: 0px;
 	
-	animation: win_colorize;
-	animation-duration: 2s;
-	animation-delay: 1s;
-	animation-time-function: ease-out;
-	-webkit-animation-play-state: paused;
-	animation-play-state: paused;
-	
 	position: absolute;
 }
 
@@ -176,7 +169,21 @@ div.newFactBox, div.finalFactBox, div.newFactPlaceholder, div.finalFactPlacehold
 	margin: 12px auto;
 }
 
-.newFactBox > p, .finalFactBox > p
+.answerContainer
+{
+	position: relative;
+	width: inherit;
+	height: inherit;
+	
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	
+	transition: transform 1.5s;
+	transform-style: preserve-3d;
+}
+
+.newFactBox > p, .answerContainer > div > p
 {
 	margin: 0px auto;
 	
@@ -188,14 +195,29 @@ div.newFactBox, div.finalFactBox, div.newFactPlaceholder, div.finalFactPlacehold
 	opacity: 1;
 }
 
-.finalFactBox > p.animated
+.answerContainer > div
+{
+	position: absolute;
+	margin: 0px auto;
+	left: 0;
+	right: 0;
+	backface-visibility: hidden;
+}
+
+.answerContainer > div > p.animated
 {
 	position: relative;
 	overflow: hidden;
+}
 
-	animation: fade_in 1s ease;
-	-webkit-animation-play-state: paused;
-	animation-play-state: paused;
+.answerHidden
+{
+	transform: rotateX(0deg);
+}
+
+.answerRevealed
+{
+	transform: rotateX(-180deg);
 }
 
 div.newFactPlaceholderContainer, div.finalFactPlaceholderContainer
@@ -326,32 +348,7 @@ div.mistake > p:after
 	border-radius: 2px;
 }
 
-/* These are the keyframes that describe the animated effect "fade_in" */
-@keyframes fade_in
-{
-	from 
-	{
-		opacity: 1;
-		left: -100px;
-	}
-	to 
-	{
-		opacity: 1;
-		left: 0px;
-	}  
-}
-
-@keyframes win_colorize
-{
-	from
-	{
-		background-color: #0092f1;
-	}
-	to
-	{
-		background-color: green;
-	}
-}
+/* Animations */
 
 @keyframes lose_colorize
 {
@@ -361,19 +358,7 @@ div.mistake > p:after
 	}
 	to
 	{
-		background-color: red;
-	}
-}
-
-@keyframes win_reset
-{
-	from
-	{
-		background-color: green;
-	}
-	to
-	{
-		background-color: #0092f1;
+		background-color: #f7002e;
 	}
 }
 
@@ -381,7 +366,7 @@ div.mistake > p:after
 {
 	from
 	{
-		background-color: red;
+		background-color: #f7002e;
 	}
 	to
 	{

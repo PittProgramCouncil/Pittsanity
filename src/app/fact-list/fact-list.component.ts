@@ -68,12 +68,14 @@ export class FactListComponent implements OnInit {
 	
 	ngDoCheck()
 	{
+		var animated_elements = Array.from(document.getElementsByClassName("finalFactBox") as HTMLCollectionOf<HTMLElement>);
+		
 		//Only advance to next round if all of the current round's facts were placed in the correct order,
 		//or if it is the pre-round screen where there are no facts
 		if(this.eventFlagsService.nextRoundFlag == true && this.correctOrder && this.curRound < 2)
 		{
 			this.correctOrder = false;
-			this.resetWinLoseBackground();
+			this.resetLoseBackground();
 			
 			//If the player did not put all of the round's fact onto the board, the next round shall not start.
 			if(this.newFacts.length == 0 && !this.isTitleScreen)
@@ -103,7 +105,7 @@ export class FactListComponent implements OnInit {
 		
 		if(this.eventFlagsService.nextGroupFlag == true && this.curGroup < 9)
 		{
-			this.resetWinLoseBackground();
+			this.resetLoseBackground();
 			
 			//The next group may be started at any time (for now).
 			this.isTitleScreen = false;
@@ -121,7 +123,7 @@ export class FactListComponent implements OnInit {
 		
 		if(this.eventFlagsService.prevGroupFlag == true && this.curGroup > 0)
 		{
-			this.resetWinLoseBackground();
+			this.resetLoseBackground();
 			
 			this.correctOrder = true;
 			this.roundWon = -1;
@@ -186,7 +188,6 @@ export class FactListComponent implements OnInit {
 	
 	
 	//checkValues returns true if the facts in this.finalFacts are in order, with higher number values at the top.
-	//checkValues also flips the value of this.revealValues, which will reveal or hide the number values of each fact.
 	checkValues() : number
 	{
 		//Do nothing if not all of the facts have been placed in finalFacts
@@ -211,11 +212,12 @@ export class FactListComponent implements OnInit {
 		//Only reveal the fact values if they are in the correct order
 		if(correct)
 		{
-			this.revealAnswers()
+			this.playRevealAnimation();
 		}
-		
-		this.playRevealAnimation();
-		this.playWinLoseAnimation(correct);
+		else
+		{
+			this.playLoseAnimation();
+		}
 		
 		if(correct)
 		{
@@ -229,86 +231,45 @@ export class FactListComponent implements OnInit {
 		}
 	}
 	
-	revealAnswers() : void
-	{
-		for(var i = 0; i < this.finalFacts.length; ++i)
-		{
-			this.finalFacts[i].revealed = 1;
-		}
-	}
-	
 	playRevealAnimation() : void
 	{
-		var animated_elements = Array.from(document.getElementsByClassName("animated") as HTMLCollectionOf<HTMLElement>);
+		var animated_elements = Array.from(document.getElementsByClassName("answerContainer") as HTMLCollectionOf<HTMLElement>);
 		
 		for(var i = 0; i < animated_elements.length; ++i)
 		{
-			//For some reason, the element's animationPlayState is an empty string when the page is first loaded.
-			if(animated_elements[i].style.animationPlayState == "paused" || animated_elements[i].style.animationPlayState == "")
-			{
-				animated_elements[i].style.animationPlayState = "running";
-			}
-			else
-			{
-				animated_elements[i].style.animationPlayState = "paused";
-			}
+			animated_elements[i].style.transform = "rotateX(-180deg)";
 		}
 	}
 	
-	playWinLoseAnimation(correct) : void
+	playLoseAnimation() : void
 	{
-		var animated_elements = Array.from(document.getElementsByClassName("gameBackground") as HTMLCollectionOf<HTMLElement>);
+		var animated_elements = Array.from(document.getElementsByClassName("finalFactBox") as HTMLCollectionOf<HTMLElement>);
 		
 		for(var i = 0; i < animated_elements.length; ++i)
 		{		
-			//For some reason, the element's animationPlayState is an empty string when the page is first loaded.
-			if(correct)
-			{
-				animated_elements[i].style.animation = "win_colorize 2s ease-out forwards";
-			}
-			else
-			{
-				animated_elements[i].style.animation = "lose_colorize 2s ease-out forwards";
-			}
-			
-			animated_elements[i].style.animationDelay = "1.5s";
+			animated_elements[i].style.animation = "lose_colorize 2.0s ease-out forwards";
+			animated_elements[i].style.animationDelay = "0.5s";
 			animated_elements[i].style.animationPlayState = "running";
 		}
 	}
 	
-	resetWinLoseBackground() : void
+	resetLoseBackground() : void
 	{
-		//No play data, previous round was neither won or lost - do nothing
-		if(this.roundWon < 0)
+		//This function is activated 
+		if(this.roundWon != 0)
 		{
 			return;
 		}
 		
-		var animated_elements = Array.from(document.getElementsByClassName("gameBackground") as HTMLCollectionOf<HTMLElement>);
+		var animated_elements = Array.from(document.getElementsByClassName("finalFactBox") as HTMLCollectionOf<HTMLElement>);
 		
 		for(var i = 0; i < animated_elements.length; ++i)
 		{		
-			if(this.roundWon == 1)
-			{
-				animated_elements[i].style.animation = "win_reset 0.5s ease forwards";
-				animated_elements[i].style.animationPlayState = "running";
-			}
-			else
-			{
-				this.numMistakes.push(true);
-				
-				if(this.numMistakes.length == 3)
-				{
-					this.revealAnswers();
-				}
-				else
-				{
-					animated_elements[i].style.animation = "lose_reset 0.5s ease forwards";
-					animated_elements[i].style.animationPlayState = "running";
-				}
-			}	
+			animated_elements[i].style.animation = "";
+			animated_elements[i].style.backgroundColor = "#0092f1";
 		}
 		
+		this.numMistakes.push(true);
 		this.roundWon = -1;
 	}
 	

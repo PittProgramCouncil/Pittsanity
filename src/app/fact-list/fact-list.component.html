@@ -8,7 +8,7 @@
 	</div>
 </div>
 
-<div class="gameContainer" (click)="resetWinLoseBackground()">
+<div class="gameContainer" (click)="resetLoseBackground()">
 	
 	<div class="gameBackground" *ngIf="curGroup == -1">
 		<div class="titleCard">
@@ -49,7 +49,14 @@
 			class="example-list" id="final-facts-list"
 			(cdkDropListDropped)="drop($event)">
 				<div class="finalFactBox" *ngFor="let item of finalFacts; let i = index" id="{{ 'fact' + i }}" cdkDrag>
-					<p class="animated">{{item.revealed == 1 ? item.answer : item.fact}}</p>
+					<div class="answerContainer">
+						<div class="answerHidden">
+							<p class="animated">{{item.fact}}</p>
+						</div>
+						<div class="answerRevealed">
+							<p class="animated">{{item.answer}}</p>
+						</div>
+					</div>
 				</div>
 				
 			</div>
