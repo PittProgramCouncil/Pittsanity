@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import password from "../password.json";
+import { Component } from '@angular/core';
 
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
@@ -12,14 +13,14 @@ import { ClockPipe } from '../clock.pipe';
   templateUrl: './fact-list.component.html',
   styleUrls: ['./fact-list.component.css']
 })
-export class FactListComponent implements OnInit {
-
+export class FactListComponent {
+	private password = password;
 	isTitleScreen = true;
 	newFacts = [];
 	finalFacts = [];
 	title = "";
 	curRound = -1;
-	curGroup = -1;
+	curGroup = -2;
 	
 	/*	numMistakes: The length of numMistakes keeps track of how many times the current group has put the facts in 
 	*	the incorrect order. This has to be an array because it is used to create elements in fact-list.component.html
@@ -50,21 +51,6 @@ export class FactListComponent implements OnInit {
 
   
 	constructor(private factService: FactService, private eventFlagsService: EventFlagsService) { }
-	
-	ngOnInit()
-	{
-		this.isTitleScreen = true;
-		this.newFacts = [];
-		this.finalFacts = [];
-		this.title = "";
-		this.curRound = -1;
-		this.curGroup = -1;
-		this.numMistakes = [];
-		this.roundWon = -1;
-		this.correctOrder = true;
-		this.timeRemaining = -1;
-		this.startTimer();
-	}
 	
 	ngDoCheck()
 	{
@@ -269,7 +255,11 @@ export class FactListComponent implements OnInit {
 			animated_elements[i].style.backgroundColor = "#0092f1";
 		}
 		
-		this.numMistakes.push(true);
+		if(this.numMistakes.length < 3)
+		{
+			this.numMistakes.push(true);
+		}
+		
 		this.roundWon = -1;
 	}
 	
@@ -294,5 +284,14 @@ export class FactListComponent implements OnInit {
 				//this.timeRemaining = 0;
 			}
 		},1000)
+	}
+	
+	checkPassword(pw)
+	{
+		
+		if(pw == this.password["value"])
+		{
+			this.curGroup++;
+		}
 	}
 }

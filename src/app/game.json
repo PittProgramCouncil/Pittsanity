@@ -1,32 +1,28 @@
 {
 	"0" :
 	{
-		"title" : "Alpha",
+		"title" : "Sample Text",
 		"0" :
 		[
 			{ 
 				"fact" : "Seats in House of Representatives",
 				"value" : 435,
-				"answer" : "435 seats",
-				"revealed" : 0
+				"answer" : "435 seats"
 			},
 			{
 				"fact" : "Decks on the world's largest cruise ship",
 				"value" : 18,
-				"answer" : "18 decks",
-				"revealed" : 0
+				"answer" : "18 decks"
 			},
 			{
 				"fact" : "Years since Pitt was established",
 				"value" : 233,
-				"answer" : "233 years",
-				"revealed" : 0
+				"answer" : "233 years"
 			},
 			{
 				"fact" : "Spaces on a Connect 4 Board",
 				"value" : 27,
-				"answer" : "27 spaces",
-				"revealed" : 0
+				"answer" : "27 spaces"
 			}
 		],
 		"1" :
@@ -34,20 +30,17 @@
 			{
 				"fact" : "Calories in an Outback Steakhouse Bloomin' Onion",
 				"value" : 800,
-				"answer" : "800 calories",
-				"revealed" : 0
+				"answer" : "800 calories"
 			},
 			{
 				"fact" : "Flavors of Ben & Jerry's Ice Cream",
 				"value" : 41,
-				"answer" : "41 flavors",
-				"revealed" : 0
+				"answer" : "41 flavors"
 			},
 			{ 
 				"fact" : "Episodes of Family Feud",
 				"value" : 3304,
-				"answer" : "3,304 episodes",
-				"revealed" : 0
+				"answer" : "3,304 episodes"
 			}
 		],
 		"2":
@@ -55,82 +48,71 @@
 			{ 
 				"fact" : "Years since 101 Dalmations was released",
 				"value" : 59,
-				"answer" : "59 years",
-				"revealed" : 0
+				"answer" : "59 years"
 			},
 			{
 				"fact" : "Weight of World's Heaviest Cat",
 				"value" : 47,
-				"answer" : "47 pounds",
-				"revealed" : 0
+				"answer" : "47 pounds"
 			}
 		]
 	},
 	
 	"1":
 	{
-		"title" : "Beta",
+		"title" : "Television",
 		"0" :
 		[
 			{ 
-				"fact" : "Alpha",
-				"value" : 0,
-				"answer" : "test",
-				"revealed" : 0
+				"fact" : "Total value of Double Jeopardy answers",
+				"value" : 36000,
+				"answer" : "$36,000"
 			},
 			{
-				"fact" : "Beta",
-				"value" : 1,
-				"answer" : "test",
-				"revealed" : 0
+				"fact" : "Series ever broadcasted on Cartoon Network",
+				"value" : 519,
+				"answer" : "519 series"
 			},
 			{
-				"fact" : "Delta",
-				"value" : 2,
-				"answer" : "test",
-				"revealed" : 0
+				"fact" : "Diners, Drive-Ins & Dives restaurants in Pennsylvania",
+				"value" : 26,
+				"answer" : "26 restaurants"
 			},
 			{
-				"fact" : "Gamma",
-				"value" : 3,
-				"answer" : "test",
-				"revealed" : 0
+				"fact" : "Minutes per year the average person watches TV",
+				"value" : 86970,
+				"answer" : "86,970 minutes per year"
 			}
 		],
 		"1" :
 		[
 			{ 
-				"fact" : "Immanuel",
-				"value" : 4,
-				"answer" : "test",
-				"revealed" : 0
+				"fact" : "SpongeBob episodes pre-SpongeBob SquarePants Movie",
+				"value" : 117,
+				"answer" : "117 SpongeBob episodes"
 			},
 			{
-				"fact" : "Jenka",
-				"value" : 5,
-				"answer" : "test",
-				"revealed" : 0
+				"fact" : "US presidents since first episode of SNL",
+				"value" : 8,
+				"answer" : "8 presidents"
 			},
 			{
-				"fact" : "Karla",
-				"value" : 6,
-				"answer" : "test",
-				"revealed" : 0
+				"fact" : "Musical guests on the Simpsons",
+				"value" : 145,
+				"answer" : "145 musical guests"
 			}
 		],
 		"2":
 		[
 			{ 
-				"fact" : "XXX",
-				"value" : 7,
-				"answer" : "test",
-				"revealed" : 0
+				"fact" : "Words in the Fresh Prince theme",
+				"value" : 350,
+				"answer" : "350 words"
 			},
 			{
-				"fact" : "YYY",
-				"value" : 8,
-				"answer" : "test",
-				"revealed" : 0
+				"fact" : "Active Klingon learners on Duolingo",
+				"value" : 297000,
+				"answer" : "297,000 Klingon learners"
 			}
 		]
 	}
