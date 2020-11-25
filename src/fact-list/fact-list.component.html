@@ -2,18 +2,30 @@
 	<div class="roundTitle">
 		<p>{{title}}</p>
 	</div>
+	
+	<div class="mistakesContainer">
+		<div class="mistake" *ngFor="let mistake of numMistakes">
+			<p>X</p>
+		</div>
+	</div>
 
 	<div class="timerContainer">
-		<p *ngIf="timeRemaining >= 0">{{timeRemaining}}</p>
+		<p *ngIf="timeRemaining >= 0">{{timeRemaining | clock}}</p>
 	</div>
 </div>
 
-<div class="gameContainer" (click)="resetWinLoseBackground()">
+<div class="gameContainer" (click)="resetLoseBackground()">	
+		<div class="gameBackground" *ngIf="curGroup == -2">
+		<div class="titleCard">
+				<input type="text" #pw>
+				<button (click)="checkPassword(pw.value);">Submit</button>
+		</div>
+	</div>
 	
 	<div class="gameBackground" *ngIf="curGroup == -1">
 		<div class="titleCard">
 				<p class="topLine">Welcome to</p>
-				<p class="pittsanity">PittSanity</p>
+				<div class="logo"></div>
 		</div>
 	</div>
 	
@@ -49,16 +61,17 @@
 			class="example-list" id="final-facts-list"
 			(cdkDropListDropped)="drop($event)">
 				<div class="finalFactBox" *ngFor="let item of finalFacts; let i = index" id="{{ 'fact' + i }}" cdkDrag>
-					<p class="animated">{{item.revealed == 1 ? item.answer : item.fact}}</p>
+					<div class="answerContainer">
+						<div class="answerHidden">
+							<p class="animated">{{item.fact}}</p>
+						</div>
+						<div class="answerRevealed">
+							<p class="animated">{{item.answer}}</p>
+						</div>
+					</div>
 				</div>
 				
 			</div>
-		</div>
-	</div>
-
-	<div class="mistakesContainer">
-		<div class="mistake" *ngFor="let mistake of numMistakes">
-			<p>X</p>
 		</div>
 	</div>
 </div>

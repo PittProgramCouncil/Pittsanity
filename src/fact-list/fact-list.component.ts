@@ -1,24 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import password from "../password.json";
+import { Component } from '@angular/core';
 
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 import { FactService } from '../fact-service.service';
 import { EventFlagsService } from '../event-flags.service';
 import { timer } from 'rxjs';
+import { ClockPipe } from '../clock.pipe';
 
 @Component({
   selector: 'app-fact-list',
   templateUrl: './fact-list.component.html',
   styleUrls: ['./fact-list.component.css']
 })
-export class FactListComponent implements OnInit {
-
+export class FactListComponent {
+	private password = password;
 	isTitleScreen = true;
 	newFacts = [];
 	finalFacts = [];
 	title = "";
 	curRound = -1;
-	curGroup = -1;
+	curGroup = -2;
 	
 	/*	numMistakes: The length of numMistakes keeps track of how many times the current group has put the facts in 
 	*	the incorrect order. This has to be an array because it is used to create elements in fact-list.component.html
@@ -43,39 +45,23 @@ export class FactListComponent implements OnInit {
 	correctOrder = true;
 	
 	timeRemaining = -1;
+	clockSpeed = 0;
 	interval;
 	subscribeTimer: any;
 
   
 	constructor(private factService: FactService, private eventFlagsService: EventFlagsService) { }
 	
-	ngOnInit()
-	{
-		this.isTitleScreen = true;
-		this.newFacts = [];
-		this.finalFacts = [];
-		this.title = "";
-		this.curRound = -1;
-		this.curGroup = -1;
-		this.numMistakes = [];
-		this.roundWon = -1;
-		this.correctOrder = true;
-		this.timeRemaining = -1;
-	}
-	
 	ngDoCheck()
 	{
-		if(this.timeRemaining == 0)
-		{
-			//checkValues? And then \
-		}
+		var animated_elements = Array.from(document.getElementsByClassName("finalFactBox") as HTMLCollectionOf<HTMLElement>);
 		
 		//Only advance to next round if all of the current round's facts were placed in the correct order,
 		//or if it is the pre-round screen where there are no facts
-		if(this.eventFlagsService.nextRoundFlag == true && this.correctOrder)
+		if(this.eventFlagsService.nextRoundFlag == true && this.correctOrder && this.curRound < 2)
 		{
 			this.correctOrder = false;
-			this.resetWinLoseBackground();
+			this.resetLoseBackground();
 			
 			//If the player did not put all of the round's fact onto the board, the next round shall not start.
 			if(this.newFacts.length == 0 && !this.isTitleScreen)
@@ -85,14 +71,13 @@ export class FactListComponent implements OnInit {
 			}
 			
 			//Set time limit based on round number
-			console.log(this.curRound);
 			switch(this.curRound)
 			{
 				case 0:
-					this.timeRemaining = 10;
+					this.timeRemaining = 90;
 					break;
 				case 1: 
-					this.timeRemaining = 20;
+					this.timeRemaining = 60;
 					break;
 				case 2:
 					this.timeRemaining = 30;
@@ -101,22 +86,39 @@ export class FactListComponent implements OnInit {
 					this.timeRemaining = -1;
 			}
 					
-			this.startTimer();
+			this.clockSpeed = 0;
 		}
 		
-		if(this.eventFlagsService.nextGroupFlag == true)
+		if(this.eventFlagsService.nextGroupFlag == true && this.curGroup < 9)
 		{
-			this.resetWinLoseBackground();
+			this.resetLoseBackground();
 			
 			//The next group may be started at any time (for now).
 			this.isTitleScreen = false;
 			this.correctOrder = true;
 			this.roundWon = -1;
 			this.curRound = -1;
+			this.timeRemaining = -1;
+			this.clockSpeed = 0;
 			this.numMistakes = [];
+			this.newFacts = [];
 			this.finalFacts = [];
 			this.getNextGroup();
 			
+		}
+		
+		if(this.eventFlagsService.prevGroupFlag == true && this.curGroup > 0)
+		{
+			this.resetLoseBackground();
+			
+			this.correctOrder = true;
+			this.roundWon = -1;
+			this.curRound = -1;
+			this.timeRemaining = -1;
+			this.numMistakes = [];
+			this.newFacts = [];
+			this.finalFacts = [];
+			this.getPrevGroup();
 		}
 		
 		if(this.eventFlagsService.checkAnswersFlag == true)
@@ -125,9 +127,12 @@ export class FactListComponent implements OnInit {
 			
 		}
 		
-		this.eventFlagsService.nextRoundFlag = false;
-		this.eventFlagsService.nextGroupFlag = false;
-		this.eventFlagsService.checkAnswersFlag = false;
+		if(this.eventFlagsService.startClockFlag == true)
+		{
+			this.clockSpeed = 1;
+		}
+		
+		this.eventFlagsService.clearFlags();
 	}
 
 	drop(event: CdkDragDrop<String[]>) 
@@ -154,15 +159,21 @@ export class FactListComponent implements OnInit {
 	getNextGroup()
 	{
 		this.factService.incrementGroup();
-		this.newFacts = this.factService.getCurRoundFacts();
 		
 		this.title = this.factService.getCurTitle();
 		this.curGroup++;
 	}
 	
+	getPrevGroup()
+	{
+		this.factService.decrementGroup();
+		
+		this.title = this.factService.getCurTitle();
+		this.curGroup--;
+	}
+	
 	
 	//checkValues returns true if the facts in this.finalFacts are in order, with higher number values at the top.
-	//checkValues also flips the value of this.revealValues, which will reveal or hide the number values of each fact.
 	checkValues() : number
 	{
 		//Do nothing if not all of the facts have been placed in finalFacts
@@ -187,11 +198,12 @@ export class FactListComponent implements OnInit {
 		//Only reveal the fact values if they are in the correct order
 		if(correct)
 		{
-			this.revealAnswers()
+			this.playRevealAnimation();
 		}
-		
-		this.playRevealAnimation();
-		this.playWinLoseAnimation(correct);
+		else
+		{
+			this.playLoseAnimation();
+		}
 		
 		if(correct)
 		{
@@ -205,84 +217,47 @@ export class FactListComponent implements OnInit {
 		}
 	}
 	
-	revealAnswers() : void
-	{
-		for(var i = 0; i < this.finalFacts.length; ++i)
-		{
-			this.finalFacts[i].revealed = 1;
-		}
-	}
-	
 	playRevealAnimation() : void
 	{
-		var animated_elements = Array.from(document.getElementsByClassName("animated") as HTMLCollectionOf<HTMLElement>);
+		var animated_elements = Array.from(document.getElementsByClassName("answerContainer") as HTMLCollectionOf<HTMLElement>);
 		
 		for(var i = 0; i < animated_elements.length; ++i)
 		{
-			//For some reason, the element's animationPlayState is an empty string when the page is first loaded.
-			if(animated_elements[i].style.animationPlayState == "paused" || animated_elements[i].style.animationPlayState == "")
-			{
-				animated_elements[i].style.animationPlayState = "running";
-			}
-			else
-			{
-				animated_elements[i].style.animationPlayState = "paused";
-			}
+			animated_elements[i].style.transform = "rotateX(-180deg)";
 		}
 	}
 	
-	playWinLoseAnimation(correct) : void
+	playLoseAnimation() : void
 	{
-		var animated_elements = Array.from(document.getElementsByClassName("gameBackground") as HTMLCollectionOf<HTMLElement>);
+		var animated_elements = Array.from(document.getElementsByClassName("finalFactBox") as HTMLCollectionOf<HTMLElement>);
 		
 		for(var i = 0; i < animated_elements.length; ++i)
 		{		
-			//For some reason, the element's animationPlayState is an empty string when the page is first loaded.
-			if(correct)
-			{
-				animated_elements[i].style.animation = "win_colorize 2s ease-out forwards";
-			}
-			else
-			{
-				animated_elements[i].style.animation = "lose_colorize 2s ease-out forwards";
-			}
-			
-			animated_elements[i].style.animationDelay = "1.5s";
+			animated_elements[i].style.animation = "lose_colorize 2.0s ease-out forwards";
+			animated_elements[i].style.animationDelay = "0.5s";
 			animated_elements[i].style.animationPlayState = "running";
 		}
 	}
 	
-	resetWinLoseBackground() : void
+	resetLoseBackground() : void
 	{
-		//No play data, previous round was neither won or lost - do nothing
-		if(this.roundWon < 0)
+		//This function is activated 
+		if(this.roundWon != 0)
 		{
 			return;
 		}
 		
-		var animated_elements = Array.from(document.getElementsByClassName("gameBackground") as HTMLCollectionOf<HTMLElement>);
+		var animated_elements = Array.from(document.getElementsByClassName("finalFactBox") as HTMLCollectionOf<HTMLElement>);
 		
 		for(var i = 0; i < animated_elements.length; ++i)
 		{		
-			if(this.roundWon == 1)
-			{
-				animated_elements[i].style.animation = "win_reset 0.5s ease forwards";
-				animated_elements[i].style.animationPlayState = "running";
-			}
-			else
-			{
-				this.numMistakes.push(true);
-				
-				if(this.numMistakes.length == 3)
-				{
-					this.revealAnswers();
-				}
-				else
-				{
-					animated_elements[i].style.animation = "lose_reset 0.5s ease forwards";
-					animated_elements[i].style.animationPlayState = "running";
-				}
-			}	
+			animated_elements[i].style.animation = "";
+			animated_elements[i].style.backgroundColor = "#0092f1";
+		}
+		
+		if(this.numMistakes.length < 3)
+		{
+			this.numMistakes.push(true);
 		}
 		
 		this.roundWon = -1;
@@ -302,13 +277,21 @@ export class FactListComponent implements OnInit {
 		this.interval = setInterval(() => {
 			if(this.timeRemaining > 0)
 			{
-				this.timeRemaining--;
+				this.timeRemaining -= this.clockSpeed;
 			}
 			else
 			{
-				this.timeRemaining = 0;
+				//this.timeRemaining = 0;
 			}
 		},1000)
 	}
-
+	
+	checkPassword(pw)
+	{
+		
+		if(pw == this.password["value"])
+		{
+			this.curGroup++;
+		}
+	}
 }

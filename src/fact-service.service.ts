@@ -16,10 +16,9 @@ export class FactService {
 	//getCurRoundFacts returns an array of objects of the form { fact, value }
 	getCurRoundFacts()
 	{
-		console.log(this.curRound);
 		if(this.curRound >= 0)
 		{
-			return this.game["" + this.curGroup]["" + this.curRound];
+			return this.game["" + this.curGroup]["" + this.curRound].slice();
 		}
 		else
 		{
@@ -52,6 +51,15 @@ export class FactService {
 		if(this.curGroup != Object.keys(this.game).length - 1)
 		{
 			this.curGroup++;
+			this.curRound = -1;
+		}
+	}
+	
+	decrementGroup()
+	{
+		if(this.curGroup > 0)
+		{
+			this.curGroup--;
 			this.curRound = -1;
 		}
 	}

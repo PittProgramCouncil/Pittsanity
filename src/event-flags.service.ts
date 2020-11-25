@@ -6,7 +6,18 @@ import { Injectable } from '@angular/core';
 export class EventFlagsService {
 	nextRoundFlag: boolean = false;
 	nextGroupFlag: boolean = false;
+	prevGroupFlag: boolean = false;
 	checkAnswersFlag: boolean = false;
+	startClockFlag: boolean = false;
 	
 	constructor() { }
+	
+	clearFlags()
+	{
+		this.nextRoundFlag = false;
+		this.nextGroupFlag = false;
+		this.prevGroupFlag = false;
+		this.checkAnswersFlag = false;
+		this.startClockFlag = false;
+	}
 }

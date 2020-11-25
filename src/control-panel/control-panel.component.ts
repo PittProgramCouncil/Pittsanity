@@ -25,8 +25,18 @@ export class ControlPanelComponent implements OnInit {
 		this.eventFlagsService.nextGroupFlag = true;
 	}
 	
+	startPrevGroup()
+	{
+		this.eventFlagsService.prevGroupFlag = true;
+	}
+	
 	checkAnswers()
 	{
 		this.eventFlagsService.checkAnswersFlag = true;
+	}
+	
+	startClock()
+	{
+		this.eventFlagsService.startClockFlag = true;
 	}
 }

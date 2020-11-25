@@ -10,6 +10,7 @@ div.taskbarDiv
 	width: 100%;
 	padding: 0px;
 	margin: 0px;
+	z-index: 100;
 }
 
 div:hover ul.taskbar
@@ -40,7 +41,7 @@ li
 	background-color: #fff2a8;
 }
 
-li.nextGroup, li.dividerRight, li.groupList
+li.nextGroup, li.dividerRight, li.prevGroup
 {
 	float: right;
 }
