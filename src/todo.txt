@@ -1,9 +1,0 @@
-In order of priority:
-  > Cosmetic stuff 
-	- Background needs to fade away from red before switching to next round because the group gets one life.
-	- Put lives to right of fact lists
-	- Only add mistake to right when clicking away from fade out animation
-  > Next group and next round should be separated far away from eachother.
-
-Errors:
-  > Sometimes hitting nextRound or nextGroup when no facts are in the finalFacts column makes the background flash red
