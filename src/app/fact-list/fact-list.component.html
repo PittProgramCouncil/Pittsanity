@@ -15,9 +15,9 @@
 </div>
 
 <div class="gameContainer" (click)="resetLoseBackground()">	
-		<div class="gameBackground" *ngIf="curGroup == -2">
+	<div class="gameBackground" *ngIf="curGroup == -2">
 		<div class="titleCard">
-				<input type="text" #pw>
+				<input type="password" #pw>
 				<button (click)="checkPassword(pw.value);">Submit</button>
 		</div>
 	</div>

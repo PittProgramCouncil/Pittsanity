@@ -50,7 +50,10 @@ export class FactListComponent {
 	subscribeTimer: any;
 
   
-	constructor(private factService: FactService, private eventFlagsService: EventFlagsService) { }
+	constructor(private factService: FactService, private eventFlagsService: EventFlagsService) 
+	{ 
+		this.setUpTimer();
+	}
 	
 	ngDoCheck()
 	{
@@ -89,7 +92,7 @@ export class FactListComponent {
 			this.clockSpeed = 0;
 		}
 		
-		if(this.eventFlagsService.nextGroupFlag == true && this.curGroup < 9)
+		if(this.eventFlagsService.nextGroupFlag == true && this.curGroup < 9 && this.curGroup > -2)
 		{
 			this.resetLoseBackground();
 			
@@ -104,7 +107,6 @@ export class FactListComponent {
 			this.newFacts = [];
 			this.finalFacts = [];
 			this.getNextGroup();
-			
 		}
 		
 		if(this.eventFlagsService.prevGroupFlag == true && this.curGroup > 0)
@@ -124,7 +126,7 @@ export class FactListComponent {
 		if(this.eventFlagsService.checkAnswersFlag == true)
 		{
 			this.roundWon = this.checkValues();
-			
+			this.clockSpeed = 0;
 		}
 		
 		if(this.eventFlagsService.startClockFlag == true)
@@ -272,7 +274,7 @@ export class FactListComponent {
 		});
 	}
 	
-	startTimer()
+	setUpTimer()
 	{
 		this.interval = setInterval(() => {
 			if(this.timeRemaining > 0)
