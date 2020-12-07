@@ -7,3 +7,8 @@ body
 	margin: 0px;
 	overflow: hidden;
 }
+
+p
+{
+	user-select: none;
+}
