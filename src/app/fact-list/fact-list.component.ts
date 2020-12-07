@@ -134,6 +134,11 @@ export class FactListComponent {
 			this.clockSpeed = 1;
 		}
 		
+		if(this.eventFlagsService.pauseClockFlag == true)
+		{
+			this.clockSpeed = 0;
+		}
+		
 		this.eventFlagsService.clearFlags();
 	}
 
@@ -251,15 +256,22 @@ export class FactListComponent {
 		
 		var animated_elements = Array.from(document.getElementsByClassName("finalFactBox") as HTMLCollectionOf<HTMLElement>);
 		
-		for(var i = 0; i < animated_elements.length; ++i)
-		{		
-			animated_elements[i].style.animation = "";
-			animated_elements[i].style.backgroundColor = "#0092f1";
+		if(this.numMistakes.length < 3)
+		{
+			this.numMistakes.push(true);
 		}
 		
 		if(this.numMistakes.length < 3)
 		{
-			this.numMistakes.push(true);
+			for(var i = 0; i < animated_elements.length; ++i)
+			{		
+				animated_elements[i].style.animation = "";
+				animated_elements[i].style.backgroundColor = "#0092f1";
+			}
+		}
+		else
+		{
+			this.playRevealAnimation();
 		}
 		
 		this.roundWon = -1;
@@ -286,6 +298,16 @@ export class FactListComponent {
 				//this.timeRemaining = 0;
 			}
 		},1000)
+	}
+	
+	addTime(time)
+	{
+		this.timeRemaining += time;
+	}
+	
+	setTime(time)
+	{
+		this.timeRemaining = time;
 	}
 	
 	checkPassword(pw)

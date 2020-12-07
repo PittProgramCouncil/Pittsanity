@@ -39,4 +39,9 @@ export class ControlPanelComponent implements OnInit {
 	{
 		this.eventFlagsService.startClockFlag = true;
 	}
+	
+	pauseClock()
+	{
+		this.eventFlagsService.pauseClockFlag = true;
+	}
 }

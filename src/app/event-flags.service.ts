@@ -9,6 +9,7 @@ export class EventFlagsService {
 	prevGroupFlag: boolean = false;
 	checkAnswersFlag: boolean = false;
 	startClockFlag: boolean = false;
+	pauseClockFlag: boolean = false;
 	
 	constructor() { }
 	
@@ -19,5 +20,6 @@ export class EventFlagsService {
 		this.prevGroupFlag = false;
 		this.checkAnswersFlag = false;
 		this.startClockFlag = false;
+		this.pauseClockFlag = false;
 	}
 }

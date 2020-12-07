@@ -30,8 +30,7 @@ div.timerContainer
 div.roundTitle > p, div.timerContainer > p
 {
 	text-align: left;
-	margin: 0px;
-	margin-left: 25px;
+	margin-top: 0px;
 	
 	font-family: "Franklin Gothic Medium";
 	font-size: 24pt;
@@ -39,6 +38,31 @@ div.roundTitle > p, div.timerContainer > p
 	letter-spacing: 1px;
 	color: white;
 	line-height: 50px;
+}
+
+div.roundTitle > p
+{
+	margin-left: 25px;
+}
+
+p.clockTime
+{
+	margin-left: 25px;
+	float: left;
+}
+
+p.clockButton
+{
+	visibility: hidden;
+	margin-left: 5px;
+	margin-right: 5px;
+	float: right;
+	cursor: pointer;
+}
+
+div.timerContainer:hover p.clockButton
+{
+	visibility: visible;
 }
 
 div.mistakesContainer
