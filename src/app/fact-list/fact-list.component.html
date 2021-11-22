@@ -1,0 +1,80 @@
+<div class="topHUD">
+	<div class="roundTitle">
+		<p>{{title}}</p>
+	</div>
+	
+	<div class="mistakesContainer">
+		<div class="mistake" *ngFor="let mistake of numMistakes">
+			<p>X</p>
+		</div>
+	</div>
+
+	<div class="timerContainer">
+		<p *ngIf="timeRemaining >= 0" class="clockTime">{{timeRemaining | clock}}</p>
+		<p *ngIf="curGroup >= 0" class="clockButton" (click)="setTime(0)">×</p>
+		<p *ngIf="curGroup >= 0" class="clockButton" (click)="addTime(-30)">−</p>
+		<p *ngIf="curGroup >= 0" class="clockButton" (click)="addTime(30)">+</p>
+	</div>
+</div>
+
+<div class="gameContainer" (click)="resetLoseBackground()">	
+	<div class="gameBackground" *ngIf="curGroup == -2">
+		<div class="titleCard">
+				<input type="password" #pw>
+				<button (click)="checkPassword(pw.value);">Submit</button>
+		</div>
+	</div>
+	
+	<div class="gameBackground" *ngIf="curGroup == -1">
+		<div class="titleCard">
+				<p class="topLine">Welcome to</p>
+				<div class="logo"></div>
+		</div>
+	</div>
+	
+	<div class="gameBackground" *ngIf="curGroup > -1">
+		<div class="example-container">
+			<div class="newFactPlaceholderContainer">
+				<div class="newFactPlaceholder" *ngFor="let item of [].constructor(4)"></div>
+			</div>
+			
+			<div
+			cdkDropList
+			#newFactsList="cdkDropList"
+			[cdkDropListData]="newFacts"
+			[cdkDropListConnectedTo]="[finalFactsList]"
+			class="example-list" id="new-facts-list"
+			(cdkDropListDropped)="drop($event)">
+				<div class="newFactBox" *ngFor="let item of newFacts" cdkDrag>
+					<p>{{item.fact}}</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="example-container" id="final-facts-container">
+			<div class="finalFactPlaceholderContainer">
+				<div class="finalFactPlaceholder" *ngFor="let item of [].constructor(9)"></div>
+			</div>
+			
+			<div
+			cdkDropList
+			#finalFactsList="cdkDropList"
+			[cdkDropListData]="finalFacts"
+			[cdkDropListConnectedTo]="[newFactsList]"
+			class="example-list" id="final-facts-list"
+			(cdkDropListDropped)="drop($event)">
+				<div class="finalFactBox" *ngFor="let item of finalFacts; let i = index" id="{{ 'fact' + i }}" cdkDrag>
+					<div class="answerContainer">
+						<div class="answerHidden">
+							<p class="animated">{{item.fact}}</p>
+						</div>
+						<div class="answerRevealed">
+							<p class="animated">{{item.answer}}</p>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>

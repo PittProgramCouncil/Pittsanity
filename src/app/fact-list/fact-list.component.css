@@ -1,0 +1,415 @@
+div.topHUD
+{
+	width: 81vw;
+}
+
+div.roundTitle, div.timerContainer
+{
+	position: relative;
+	
+	background-color: #0092f1;
+	border: 8px solid #010647;
+	
+	width: 300px;
+	height: 50px;
+	margin: 15px;
+}
+
+div.roundTitle
+{
+	transform: skewX(-20deg);
+	float: left;
+}
+
+div.timerContainer
+{
+	transform: skewX(20deg);
+	float: right;
+}
+
+div.roundTitle > p, div.timerContainer > p
+{
+	text-align: left;
+	margin-top: 0px;
+	
+	font-family: "Franklin Gothic Medium";
+	font-size: 24pt;
+	font-weight: bold;
+	letter-spacing: 1px;
+	color: white;
+	line-height: 50px;
+}
+
+div.roundTitle > p
+{
+	margin-left: 25px;
+}
+
+p.clockTime
+{
+	margin-left: 25px;
+	float: left;
+}
+
+p.clockButton
+{
+	visibility: hidden;
+	margin-left: 5px;
+	margin-right: 5px;
+	float: right;
+	cursor: pointer;
+}
+
+div.timerContainer:hover p.clockButton
+{
+	visibility: visible;
+}
+
+div.mistakesContainer
+{
+	height: 60px;
+	min-width: 60px;
+	margin: 15px 59px;
+	
+	position: relative;
+	float: left;
+}
+
+div.mistake
+{
+	position: relative;
+	float: left;
+	
+	width: 60px;
+	height: 60px;
+	margin-left: 13px;
+	margin-right: 25px;
+	border-radius: 3px;
+	background-image: linear-gradient(red, red);
+}
+
+div.mistake > p
+{
+	color: white;
+	text-align: center;
+	line-height: 2.4;
+	margin: 0px;
+	
+	font-family: "Franklin Gothic Medium";
+	font-size: 25px;
+	font-weight: bold;
+	text-shadow: 0px -1px #333;
+}
+
+/* Shiny effect */
+div.mistake > p:after
+{
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: calc(100% - 4px);
+	height: 50%;
+	background: linear-gradient(rgba(255,200,200,0.8), rgba(255,100,100,0.1));
+	border-radius: 2px;
+}
+
+div.gameContainer
+{
+	height: 95%;
+	max-height: 95%;
+	width: 100vw;
+	
+	display: flex;
+}
+
+div.gameBackground
+{
+	background-image: url("../../assets/factsBackground.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	image-rendering: pixelated;
+	
+	background-color: #0092f1;
+	border: 8px solid #010647;
+	
+	height: 480px;
+	width: 80%;
+	margin: 0px;
+	
+	position: absolute;
+}
+
+div.titleCard
+{
+	background-color: #0092f1;
+	border: 8px solid #010647;
+	
+	position: relative;
+	
+	height: 80%;
+	width: 80%;
+	margin: auto;
+	top: 50%;
+	transform: translate(0%, -50%);
+}
+
+div.titleCard > p
+{
+	font-family: "Franklin Gothic Medium";
+	text-align: center;
+	font-size: 40px;
+	font-weight: 600;
+	font-style: italic;
+	text-shadow: 0px 3px 5px #555;
+	
+	top: 20%;
+	color: white;
+	position: relative;
+	margin: 0px;
+	
+	
+}
+
+div.titleCard > div
+{
+	position: relative;
+	background-image: url("../../assets/logo.png");
+	width: 476px;
+	height: 123px;
+	margin: 0px auto;
+	top: 80px;
+}
+
+input, button
+{
+	position: relative;
+	left: 300px;
+	top: 50px;
+}
+
+.example-container
+{
+	height: 100%;
+	display: inline-block;
+	margin: 0px 30px;
+	vertical-align: top;
+}
+
+.example-list 
+{
+	position: absolute;
+	z-index: 100;
+	
+	max-width: 100%;
+	display: block;
+	border-radius: 4px;
+	overflow: hidden;
+	
+	/*border: red 1px solid;*/
+}
+
+div #new-facts-list
+{
+    top: 114px;
+    left: 55px;
+	width: 450px;
+	min-height: 220px;
+}
+
+div #final-facts-list
+{
+	right: 60px;
+	width: 450px;
+	min-height: 480px;
+}
+
+div.newFactBox, div.finalFactBox, div.newFactPlaceholder, div.finalFactPlaceholder
+{
+	background: #1198e1;
+	
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	box-sizing: border-box;
+	cursor: move;
+	border: 2px #DDD solid;
+	box-shadow: 0px 0px 5px 2px #111;
+}
+
+.newFactBox
+{
+	width: 450px;
+	height: 40px;
+	padding: 18px 10px;
+	margin: 12px auto;
+}
+
+.finalFactBox
+{
+	width: 450px;
+	height: 40px;
+	padding: 18px 10px;
+	margin: 12px auto;
+}
+
+.answerContainer
+{
+	position: relative;
+	width: inherit;
+	height: inherit;
+	
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	
+	transition: transform 1.5s;
+	transform-style: preserve-3d;
+}
+
+.newFactBox > p, .answerContainer > div > p
+{
+	margin: 0px auto;
+	
+	font-family: "Franklin Gothic Medium";
+	font-size: 18px;
+	font-weight: 400;
+	text-align: center;
+	color: white;
+	opacity: 1;
+}
+
+.answerContainer > div
+{
+	position: absolute;
+	margin: 0px auto;
+	left: 0;
+	right: 0;
+	backface-visibility: hidden;
+}
+
+.answerContainer > div > p.animated
+{
+	position: relative;
+	overflow: hidden;
+}
+
+.answerHidden
+{
+	transform: rotateX(0deg);
+}
+
+.answerRevealed
+{
+	transform: rotateX(-180deg);
+}
+
+div.newFactPlaceholderContainer, div.finalFactPlaceholderContainer
+{
+	position: absolute;
+}
+
+div.newFactPlaceholderContainer
+{
+	top: 115px;
+	left: 55px;
+}
+
+div.finalFactPlaceholderContainer
+{
+	right: 60px;
+}
+
+div.newFactPlaceholder, div.finalFactPlaceholder
+{	
+	background: #fff2a8;
+	
+	border: 2px #fbdd29 solid;
+	box-shadow: 0px 5px 5px #111
+}
+
+div.newFactPlaceholder
+{
+	width: 450px;
+	height: 40px;
+	padding: 18px 10px;
+	margin: 12px auto;
+}
+
+div.finalFactPlaceholder
+{
+	width: 450px;
+	height: 40px;
+	padding: 18px 10px;
+	margin: 12px auto;
+}
+
+.cdk-drag-preview {
+	width: 450px;
+	height: 40px;
+	padding: 18px 10px;
+	margin: 12px auto;
+	
+	box-sizing: border-box;
+	border-radius: 4px;
+	box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+			  0 8px 10px 1px rgba(0, 0, 0, 0.14),
+			  0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+	width: 450px;
+	height: 40px;
+	padding: 18px 10px;
+	opacity: 0;
+}
+
+.newFactBox.cdk-drag-placeholder
+{
+	margin: 12px auto;
+}
+
+.finalFactBox.cdk-drag-placeholder
+{
+	margin: 12px auto;
+}
+
+.cdk-drag-dragging 
+{
+	background-color: green;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* Animations */
+
+@keyframes lose_colorize
+{
+	from
+	{
+		background-color: #0092f1;
+	}
+	to
+	{
+		background-color: #f7002e;
+	}
+}
+
+@keyframes lose_reset
+{
+	from
+	{
+		background-color: #f7002e;
+	}
+	to
+	{
+		background-color: #0092f1;
+	}
+}
