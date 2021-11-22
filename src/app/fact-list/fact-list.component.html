@@ -11,9 +11,9 @@
 
 	<div class="timerContainer">
 		<p *ngIf="timeRemaining >= 0" class="clockTime">{{timeRemaining | clock}}</p>
-		<p *ngIf="curGroup >= 0" class="clockButton" (click)="setTime(0)">×</p>
-		<p *ngIf="curGroup >= 0" class="clockButton" (click)="addTime(-30)">−</p>
 		<p *ngIf="curGroup >= 0" class="clockButton" (click)="addTime(30)">+</p>
+		<p *ngIf="curGroup >= 0" class="clockButton" (click)="addTime(-30)">−</p>
+		<p *ngIf="curGroup >= 0" class="clockButton" (click)="setTime(0)">×</p>
 	</div>
 </div>
 

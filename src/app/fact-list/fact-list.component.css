@@ -47,8 +47,8 @@ div.roundTitle > p
 
 p.clockTime
 {
-	margin-left: 25px;
-	float: left;
+	margin-right: 25px;
+	float: right;
 }
 
 p.clockButton
@@ -56,7 +56,7 @@ p.clockButton
 	visibility: hidden;
 	margin-left: 5px;
 	margin-right: 5px;
-	float: right;
+	float: left;
 	cursor: pointer;
 }
 
