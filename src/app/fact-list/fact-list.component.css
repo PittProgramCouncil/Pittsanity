@@ -1,6 +1,7 @@
-div.topHUD
-{
-	width: 81vw;
+:host {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
 }
 
 div.roundTitle, div.timerContainer
@@ -116,11 +117,8 @@ div.mistake > p:after
 
 div.gameContainer
 {
-	height: 95%;
-	max-height: 95%;
-	width: 100vw;
-	
 	display: flex;
+	flex-grow: 1;
 }
 
 div.gameBackground
@@ -128,16 +126,9 @@ div.gameBackground
 	background-image: url("../../assets/factsBackground.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	image-rendering: pixelated;
-	
 	background-color: #0092f1;
 	border: 8px solid #010647;
-	
-	height: 480px;
-	width: 80%;
-	margin: 0px;
-	
-	position: absolute;
+	flex-grow: 1;	
 }
 
 div.titleCard
