@@ -10,20 +10,13 @@ div.wrapper
 	flex-direction: column;
 	flex-grow: 1;
 	width: 100%;
-	/*height: 500px;*/
 	height: 100%;
 }
 
 div.facts
 {
-	/*
-	width: 100%;
-	height: 500px;
-	height: 100%;
-	*/
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
-	padding-left: 10%;
-	padding-right: 10%;
+	padding: 0% 5%;
 }
