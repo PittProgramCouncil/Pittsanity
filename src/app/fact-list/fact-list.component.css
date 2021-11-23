@@ -119,6 +119,7 @@ div.gameContainer
 {
 	display: flex;
 	flex-grow: 1;
+	padding-bottom: 3%;
 }
 
 div.gameBackground
@@ -137,17 +138,26 @@ div.titleCard
 {
 	background-color: #0092f1;
 	border: 8px solid #010647;
-	
-	position: relative;
-	
-	height: 80%;
-	width: 80%;
-	margin: auto;
-	top: 50%;
-	transform: translate(0%, -50%);
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	justify-content: center;
+	margin: 5%;
 }
 
-div.titleCard > p
+div.formGroup {
+	display: flex;
+	justify-content: center;
+}
+
+div.logoContainer {
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
+	justify-content: center;
+}
+
+div.logoContainer > p
 {
 	font-family: "Franklin Gothic Medium";
 	text-align: center;
@@ -156,29 +166,16 @@ div.titleCard > p
 	font-style: italic;
 	text-shadow: 0px 3px 5px #555;
 	
-	top: 20%;
 	color: white;
-	position: relative;
 	margin: 0px;
-	
-	
 }
 
-div.titleCard > div
+div.logoContainer > div
 {
-	position: relative;
 	background-image: url("../../assets/logo.png");
 	width: 476px;
 	height: 123px;
 	margin: 0px auto;
-	top: 80px;
-}
-
-input, button
-{
-	position: relative;
-	left: 300px;
-	top: 50px;
 }
 
 .factsListContainer
