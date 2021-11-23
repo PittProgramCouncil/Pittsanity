@@ -221,7 +221,7 @@ div #final-facts-list
 	right: 60px;
 	min-height: 480px;
 	*/
-	height: 480px;
+	height: 550px;
 	width: 100%;
 }
 
@@ -242,7 +242,7 @@ div.newFactBox, div.finalFactBox, div.newFactPlaceholder, div.finalFactPlacehold
 .newFactBox
 {
 	width: 450px;
-	height: 40px;
+	height: 48px;
 	padding: 18px 10px;
 	margin: 12px auto;
 }
@@ -250,7 +250,7 @@ div.newFactBox, div.finalFactBox, div.newFactPlaceholder, div.finalFactPlacehold
 .finalFactBox
 {
 	width: 450px;
-	height: 40px;
+	height: 48px;
 	padding: 18px 10px;
 	margin: 12px auto;
 }
@@ -274,7 +274,7 @@ div.newFactBox, div.finalFactBox, div.newFactPlaceholder, div.finalFactPlacehold
 	margin: 0px auto;
 	
 	font-family: "Franklin Gothic Medium";
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: 400;
 	text-align: center;
 	color: white;
@@ -320,7 +320,7 @@ div.newFactPlaceholderContainer
 
 div.finalFactPlaceholderContainer
 {
-	height: 480px;
+	height: 550px;
 }
 
 div.newFactPlaceholder, div.finalFactPlaceholder
@@ -334,7 +334,7 @@ div.newFactPlaceholder, div.finalFactPlaceholder
 div.newFactPlaceholder
 {
 	width: 450px;
-	height: 40px;
+	height: 48px;
 	padding: 18px 10px;
 	margin: 12px auto;
 }
@@ -342,14 +342,14 @@ div.newFactPlaceholder
 div.finalFactPlaceholder
 {
 	width: 450px;
-	height: 40px;
+	height: 48px;
 	padding: 18px 10px;
 	margin: 12px auto;
 }
 
 .cdk-drag-preview {
 	width: 450px;
-	height: 40px;
+	height: 48px;
 	padding: 18px 10px;
 	margin: 12px auto;
 	
@@ -362,7 +362,7 @@ div.finalFactPlaceholder
 
 .cdk-drag-placeholder {
 	width: 450px;
-	height: 40px;
+	height: 48px;
 	padding: 18px 10px;
 	opacity: 0;
 }
