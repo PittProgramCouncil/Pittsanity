@@ -1,295 +1,295 @@
 {
 	"0" :
 	{
-		"title" : "Pitt",
+		"title" : "Winter Weather",
 		"0" :
 		[
 			{ 
-				"fact" : "Years between building of the Notre-Dame cathedral and Cathy",
-				"value" : 581,
-				"answer" : "581 years"
+				"fact" : "Lowest recorded temperature in Pittsburgh (Fahrenheit)",
+				"value" : -22,
+				"answer" : "-22 degrees"
 			},
 			{
-				"fact" : "Height of the ceiling on the first floor of Cathy",
-				"value" : 52,
-				"answer" : "52 feet"
+				"fact" : "Number of days into the year the Winter Solstice takes place",
+				"value" : 355,
+				"answer" : "355 feet"
 			},
 			{
-				"fact" : "Nobel Prizes awarded to Pitt alumni",
-				"value" : 3,
-				"answer" : "3 Nobel Prizes"
+				"fact" : "Year in which the lowest temperature in Pittsburgh was recorded",
+				"value" : 1948,
+				"answer" : "1948"
 			},
 			{
-				"fact" : "Test, value is 10,000",
-				"value" : 8449,
-				"answer" : "Test 10,000"
+				"fact" : "Year of the most recent significant snowfall in Pittsburgh",
+				"value" : 1961,
+				"answer" : "1961"
 			}
 		],
 		"1" :
 		[
 			{
-				"fact" : "Words in lyrics to the full Alma Mater",
-				"value" : 135,
-				"answer" : "135 words"
+				"fact" : "Most inches of snow in one day in Pittsburgh",
+				"value" : 23,
+				"answer" : "23 inches of snow"
 			},
 			{
-				"fact" : "Tons of french fries The O would sell each week",
-				"value" : 15,
-				"answer" : "15 tons of french fries"
+				"fact" : "Number of days winter lasts in Northern Hemisphere",
+				"value" : 90,
+				"answer" : "90 days"
 			},
 			{ 
-				"fact" : "Cost of the panther statue outside of the William Pitt Union",
-				"value" : 72000,
-				"answer" : "$72,000"
+				"fact" : "Year in which Pittsburgh experienced its record snowfall in one day",
+				"value" : 1993,
+				"answer" : "1993"
 			}
 		],
 		"2":
 		[
 			{ 
-				"fact" : "Most offense yards in a Pittsburgh Panthers football career",
-				"value" : 11148,
-				"answer" : "11,148 yards"
+				"fact" : "Temperature at which rain turns to snow (Fahrenheit)",
+				"value" : 32,
+				"answer" : "32 degrees"
 			},
 			{
-				"fact" : "Names of student athletes engraved on the Varsity Walk behind Cathy",
-				"value" : 219,
-				"answer" : "219 student athletes"
+				"fact" : "Year in which Pittsburgh had its earliest snowfall",
+				"value" : 1989,
+				"answer" : "1989"
 			}
 		]
 	},
 	
 	"1":
 	{
-		"title" : "Literature",
+		"title" : "Holiday Movies",
 		"0" :
 		[
 			{
-				"fact" : "Words in the longest sentence in a book",
-				"value" : 823,
-				"answer" : "823 words"
+				"fact" : "Number of characters Tom Hank plays in the Polar Express",
+				"value" : 6,
+				"answer" : "6 Polar Express characters"
 			},
 			{
-				"fact" : "Copies of Don Qixote sold",
-				"value" : 500000000,
-				"answer" : "500 million copies of Don Qixote"
+				"fact" : "Number of family members that sat at the dinner table for turkey dinner in Christmas Vacation",
+				"value" : 14,
+				"answer" : "14 family members"
 			},
 			{ 
-				"fact" : "Most amount of unique words used in a poem",
-				"value" : 8000,
-				"answer" : "8,000 unique words"
+				"fact" : "Miracle on _th Street",
+				"value" : 34,
+				"answer" : "34th Street"
 			},
 			{
-				"fact" : "Languages Harry Potter has been published in",
-				"value" : 55,
-				"answer" : "55 languages"
+				"fact" : "Year that How the Grinch Stole Christmas won an Academy Award for best hair and makeup",
+				"value" : 2000,
+				"answer" : "2000"
 			}
 		],
 		"1" :
 		[
 			{ 
-				"fact" : "Letters in the longest word ever used in a book",
-				"value" : 171,
-				"answer" : "171 letters"
+				"fact" : "Number of ornaments on the Whoville christmas tree in How the Grinch Stole Christmas",
+				"value" : 8200,
+				"answer" : "8,200 ornaments"
 			},
 			{
-				"fact" : "Books Teddy Roosevelt would read in a day",
-				"value" : 3,
-				"answer" : "Up to 3 books a day"
+				"fact" : "Number of food groups Buddy and the elves try to stick to",
+				"value" : 4,
+				"answer" : "4 food groups"
 			},
 			{
-				"fact" : "Cost of the most expensive book ever purchased",
-				"value" : 30800000,
-				"answer" : "$30.8 million"
+				"fact" : "Number of lightbulbs Clark Griswald decorated his house with",
+				"value" : 25000,
+				"answer" : "25,000 imported Italian twinkle lights"
 			}
 		],
 		"2":
 		[
 			{ 
-				"fact" : "Consecutive years in which Jules Verne published a book",
-				"value" : 40,
-				"answer" : "40 years"
+				"fact" : "Number of rules when it comes to hot chocolate in the Polar Express",
+				"value" : 1,
+				"answer" : "1 rule"
 			},
 			{
-				"fact" : "Weeks To Kill a Mockingbird spent on best sellers list",
-				"value" : 88,
-				"answer" : "88 weeks"
+				"fact" : "Number of toppings Buddy the Elf put on his breakfast spaghetti in Elf",
+				"value" : 5,
+				"answer" : "5 toppings"
 			}
 		]
 	},
 	
 	"2":
 	{
-		"title" : "Television",
+		"title" : "Holiday Music",
 		"0" :
 		[
 			{
-				"fact" : "US presidents since first episode of SNL",
-				"value" : 8,
-				"answer" : "8 presidents"
+				"fact" : "Number of letters in the last word of “Rudolph the Red-Nose Reindeer”",
+				"value" : 7,
+				"answer" : "7 letters"
 			},
 			{
-				"fact" : "Series ever broadcasted on Cartoon Network",
-				"value" : 519,
-				"answer" : "519 series"
+				"fact" : "Highest spot “The Chanukah Song” reached on the Billboard Hot 100",
+				"value" : 80,
+				"answer" : "80"
 			},
 			{ 
-				"fact" : "Total value of all Double Jeopardy answers",
-				"value" : 36000,
-				"answer" : "$36,000"
+				"fact" : "Number of gifts the singer received in “The 12 Days of Christmas”",
+				"value" : 364,
+				"answer" : "364 gifts"
 			},
 			{
-				"fact" : "Diners, Drive-Ins & Dives restaurants in Pennsylvania",
-				"value" : 26,
-				"answer" : "26 restaurants"
+				"fact" : "The year “All I Want for Christmas” reached Number 1 on the Billboard Hot 100",
+				"value" : 2019,
+				"answer" : "2019"
 			}
 		],
 		"1" :
 		[
 			{ 
-				"fact" : "SpongeBob episodes before the first movie",
-				"value" : 117,
-				"answer" : "117 SpongeBob episodes"
+				"fact" : "Number of times Santa checks his list in “Santa Claus is Coming to Town”",
+				"value" : 2,
+				"answer" : "2 times"
 			},
 			{
-				"fact" : "Minutes per year the average person watches TV",
-				"value" : 86870,
-				"answer" : "86,870 minutes of TV"
+				"fact" : "You’re a mean one Mr. Grinch: I wouldn’t touch you with a ______ foot pole",
+				"value" : 39,
+				"answer" : "39 and a half"
 			},
 			{ 
-				"fact" : "Words in the Fresh Prince theme",
-				"value" : 265,
-				"answer" : "265 words"
+				"fact" : "Year “Last Christmas” by Wham! was released",
+				"value" : 1984,
+				"answer" : "1984"
 			}
 		],
 		"2":
 		[
 			{ 
-				"fact" : "Musical guests on the Simpsons",
-				"value" : 145,
-				"answer" : "145 musical guests"
+				"fact" : "Number of times Frosty’s name is said in “Frosty the Snowman”",
+				"value" : 6,
+				"answer" : "6 times"
 			},
 			{
-				"fact" : "Active Klingon learners on Duolingo",
-				"value" : 297000,
-				"answer" : "297,000 Klingon learners"
+				"fact" : "Year Ariana Grande released “Christmas & Chill”",
+				"value" : 2015,
+				"answer" : "2015"
 			}
 		]
 	},
 	
 	"3":
 	{
-		"title" : "Penguins",
+		"title" : "Winter Sports",
 		"0" :
 		[
 			{
-				"fact" : "Salary of the highest paid player",
-				"value" : 9500000,
-				"answer" : "$9,500,000"
+				"fact" : "Number of official sports in the Winter Olympics",
+				"value" : 15,
+				"answer" : "15 sports"
 			},
 			{
-				"fact" : "Stanley Cups won",
-				"value" : 5,
-				"answer" : "5 Stanley Cups"
+				"fact" : "Number Mario Lemieux wore when he played with the Penguins",
+				"value" : 66,
+				"answer" : "66"
 			},
 			{ 
-				"fact" : "Games Sidney Crosby has played in",
-				"value" : 984,
-				"answer" : "984 games"
+				"fact" : "Total number of gold medals USA won at the Winter Olympics",
+				"value" : 105,
+				"answer" : "105 gold medals"
 			},
 			{
-				"fact" : "Players on the 2019-2020 roster",
-				"value" : 24,
-				"answer" : "24 players"
+				"fact" : "Year of the first Winter Olympic Games",
+				"value" : 1924,
+				"answer" : "1924"
 			}
 		],
 		"1" :
 		[
 			{ 
-				"fact" : "Playoff appearances",
-				"value" : 52,
-				"answer" : "52 playoff appearances"
+				"fact" : "Number of athletes from Pittsburgh at the 2018 Winter Olympics",
+				"value" : 5,
+				"answer" : "5 Pittsburgh athletes"
 			},
 			{
-				"fact" : "Capacity at PPG Arena for hockey games",
-				"value" : 18387,
-				"answer" : "18,387 seats"
-			},
-			{
-				"fact" : "Most goals in a season",
-				"value" : 85,
-				"answer" : "85 goals"
-			}
-		],
-		"2":
-		[
-			{ 
-				"fact" : "Games won",
-				"value" : 1866,
-				"answer" : "1,866 wins"
+				"fact" : "Number of women on Team USA in the 2018 Winter Olympics",
+				"value" : 244,
+				"answer" : "244 women"
 			},
 			{
 				"fact" : "Years since the Penguins were founded",
 				"value" : 53,
 				"answer" : "53 years"
 			}
+		],
+		"2":
+		[
+			{ 
+				"fact" : "Year Sidney Crosby made the game-winning goal for the gold medal for Canada",
+				"value" : 2010,
+				"answer" : "2010"
+			},
+			{
+				"fact" : "Amount of money the most expensive Winter Olympics cost",
+				"value" : 51000000,
+				"answer" : "$51 billion"
+			}
 		]
 	},
 	
 	"4":
 	{
-		"title" : "Movies",
+		"title" : "Winter Food",
 		"0" :
 		[
 			{
-				"fact" : "Cost of the most expensive single stunt",
-				"value" : 100000,
-				"answer" : "$100,000"
+				"fact" : "Number of desserts eaten at a traditional French holiday celebration",
+				"value" : 13,
+				"answer" : "13 desserts"
 			},
 			{ 
-				"fact" : "Stripes on Marlin in Finding Nemo",
-				"value" : 3,
-				"answer" : "3 stripes"
+				"fact" : "Length of the world’s longest candy cane in feet",
+				"value" : 51,
+				"answer" : "51 feet"
 			},
 			{
-				"fact" : "Box office tickets sold in America in 2019",
-				"value" : 1235503823,
-				"answer" : "1,235,503,823 tickets"
+				"fact" : "Year fruit cake was invented",
+				"value" : 1400,
+				"answer" : "1400"
 			},
 			{
-				"fact" : "Years since Disney's Alice in Wonderland released",
-				"value" : 69,
-				"answer" : "69 years"
+				"fact" : "Number of households that serve cookies to Santa Claus in the U.S",
+				"value" : 1000000,
+				"answer" : "1 million households"
 			}
 		],
 		"1" :
 		[
 			{ 
-				"fact" : "Movies released this year",
-				"value" : 244,
-				"answer" : "244 movies"
+				"fact" : "Number of grapes eaten at midnight on New Year’s in Spanish tradition",
+				"value" : 12,
+				"answer" : "12 grapes"
 			},
 			{
-				"fact" : "Years since the first movie was made",
-				"value" : 132,
-				"answer" : "132 years"
+				"fact" : "Percent of people in America that drink hot chocolate",
+				"value" : 34,
+				"answer" : "34%"
 			},
 			{
-				"fact" : "Cost to make the animatronic shark in Jaws",
-				"value" : 250000,
-				"answer" : "$250,000"
+				"fact" : "Number of pounds the largest gingerbread man weighed",
+				"value" : 1308,
+				"answer" : "1,308 pounds"
 			}
 		],
 		"2":
 		[
 			{ 
-				"fact" : "Movies in the Marvel Cinematic Universe",
-				"value" : 23,
-				"answer" : "23 movies in the MCU"
+				"fact" : "Number of strands in traditional Challah bread",
+				"value" : 3,
+				"answer" : "3 strands"
 			},
 			{
-				"fact" : "Movies written by Quentin Tarantino",
-				"value" : 22,
-				"answer" : "22 Tarantino films"
+				"fact" : "Year the first eggnog drink was made",
+				"value" : 1607,
+				"answer" : "1607"
 			}
 		]
 	},
