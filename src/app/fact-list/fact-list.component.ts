@@ -258,7 +258,8 @@ export class FactListComponent {
 		
 		if(this.numMistakes.length < 3)
 		{
-			this.numMistakes.push(true);
+			/* Disabled check marks for 12/5/2021 Pittsanity event */
+			//this.numMistakes.push(true);
 		}
 		
 		if(this.numMistakes.length < 3)
