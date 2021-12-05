@@ -1,64 +1,5 @@
 {
-	"0" :
-	{
-		"title" : "Winter Weather",
-		"0" :
-		[
-			{
-				"fact" : "Year in which the lowest temperature in Pittsburgh was recorded",
-				"value" : 1948,
-				"answer" : "1948"
-			},
-			{ 
-				"fact" : "Lowest recorded temperature in Pittsburgh (Fahrenheit)",
-				"value" : -22,
-				"answer" : "-22 degrees"
-			},
-			{
-				"fact" : "Year of the most recent significant snowfall in Pittsburgh",
-				"value" : 1961,
-				"answer" : "1961"
-			},
-			{
-				"fact" : "Number of days into the year the Winter Solstice takes place",
-				"value" : 355,
-				"answer" : "355 feet"
-			}
-		],
-		"1" :
-		[
-			{
-				"fact" : "Most inches of snow in one day in Pittsburgh",
-				"value" : 23,
-				"answer" : "23 inches of snow"
-			},
-			{
-				"fact" : "Number of days winter lasts in Northern Hemisphere",
-				"value" : 90,
-				"answer" : "90 days"
-			},
-			{ 
-				"fact" : "Year in which Pittsburgh experienced its record snowfall in one day",
-				"value" : 1993,
-				"answer" : "1993"
-			}
-		],
-		"2":
-		[
-			{
-				"fact" : "Year in which Pittsburgh had its earliest snowfall",
-				"value" : 1989,
-				"answer" : "1989"
-			},
-			{ 
-				"fact" : "Temperature at which rain turns to snow (Fahrenheit)",
-				"value" : 32,
-				"answer" : "32 degrees"
-			}
-		]
-	},
-	
-	"1":
+	"0":
 	{
 		"title" : "Holiday Movies",
 		"0" :
@@ -117,7 +58,7 @@
 		]
 	},
 	
-	"2":
+	"1":
 	{
 		"title" : "Holiday Music",
 		"0" :
@@ -176,7 +117,7 @@
 		]
 	},
 	
-	"3":
+	"2":
 	{
 		"title" : "Winter Sports",
 		"0" :
@@ -235,7 +176,7 @@
 		]
 	},
 	
-	"4":
+	"3":
 	{
 		"title" : "Winter Food",
 		"0" :
@@ -294,66 +235,7 @@
 		]
 	},
 	
-	"5":
-	{
-		"title" : "Pennsylvania",
-		"0" :
-		[
-			{
-				"fact" : "Years since Pennsylvania was established",
-				"value" : 233,
-				"answer" : "233 years"
-			},
-			{ 
-				"fact" : "Length of 5th Ave in feet",
-				"value" : 29500,
-				"answer" : "29,500 feet"
-			},
-			{
-				"fact" : "Steps at the Rocky Steps",
-				"value" : 72,
-				"answer" : "72 Rocky Steps"
-			},
-			{
-				"fact" : "State universities in Pennsylvania",
-				"value" : 14,
-				"answer" : "14 state universities"
-			}
-		],
-		"1" :
-		[
-			{ 
-				"fact" : "Species of bird in Pennsylvania",
-				"value" : 432,
-				"answer" : "432 bird species"
-			},
-			{
-				"fact" : "Counties in Pennsylvania",
-				"value" : 67,
-				"answer" : "67 counties"
-			},
-			{
-				"fact" : "Trees in Pennsylvania",
-				"value" : 100000,
-				"answer" : "16 billion trees"
-			}
-		],
-		"2":
-		[
-			{ 
-				"fact" : "Miles of roadway maintained by PA state agencies",
-				"value" : 41643,
-				"answer" : "41,643 miles of roadway"
-			},
-			{
-				"fact" : "Seconds it takes to drive from Lancaster to Philadelphia",
-				"value" : 4980,
-				"answer" : "4,980 seconds"
-			}
-		]
-	},
-	
-	"6":
+	"4":
 	{
 		"title" : "Potpourri",
 		"0" :
@@ -412,61 +294,120 @@
 		]
 	},
 	
-	"7":
+	"5":
 	{
-		"title" : "Science",
+		"title" : "Pitt",
 		"0" :
 		[
-			{
-				"fact" : "Moons orbiting Jupiter",
-				"value" : 79,
-				"answer" : "79 moons"
-			},
 			{ 
-				"fact" : "Mass of the Milky Way measured in Earth's Suns",
-				"value" : 1000000000,
-				"answer" : "1.55 trillion Suns"
+				"fact" : "Years between building of the Notre-Dame and Cathy",
+				"value" : 582,
+				"answer" : "582 years"
 			},
 			{
-				"fact" : "Satellites in space as of April 1st, 2020",
-				"value" : 2666,
-				"answer" : "2,666 satellites"
+				"fact" : "Height of the ceiling on the first floor of Cathy",
+				"value" : 52,
+				"answer" : "52 feet"
 			},
 			{
-				"fact" : "Speed of light in meters per second",
-				"value" : 299792458,
-				"answer" : "299,792,458 m/s"
+				"fact" : "Nobel Prizes awarded to Pitt alumni",
+				"value" : 3,
+				"answer" : "3 Nobel Prizes"
+			},
+			{
+				"fact" : "Bed spaces in on-campus housing",
+				"value" : 8449,
+				"answer" : "8,449 beds"
 			}
 		],
 		"1" :
 		[
+			{
+				"fact" : "Words in lyrics to the full Alma Mater",
+				"value" : 135,
+				"answer" : "135 words"
+			},
+			{
+				"fact" : "Tons of french fries The O used to sell each week",
+				"value" : 15,
+				"answer" : "15 tons of french fries"
+			},
 			{ 
-				"fact" : "Years since Mercury was first observed",
-				"value" : 2285,
-				"answer" : "2,285 years"
-			},
-			{
-				"fact" : "Years since Einstein's birth",
-				"value" : 141,
-				"answer" : "141 years"
-			},
-			{
-				"fact" : "Total number of Nobel Laureates throughout history",
-				"value" : 962,
-				"answer" : "962 Nobel Laureates"
+				"fact" : "Cost of the panther statue outside of the William Pitt Union",
+				"value" : 72000,
+				"answer" : "$72,000"
 			}
 		],
 		"2":
 		[
 			{ 
-				"fact" : "Speed of sound at 20°C in kilometers per second",
-				"value" : 343,
-				"answer" : "343 km/s"
+				"fact" : "Most offense yards in a Pitt Panthers football career",
+				"value" : 13104,
+				"answer" : "13104 yards"
 			},
 			{
-				"fact" : "Protons needed to make one gram of protons",
-				"value" : 10000000001,
-				"answer" : "6.022 * 10^23 protons"
+				"fact" : "Names of student athletes honored on the Varsity Walk behind Cathy",
+				"value" : 219,
+				"answer" : "219 student athletes"
+			}
+		]
+	},
+	
+	"6":
+	{
+		"title" : "Pennsylvania",
+		"0" :
+		[
+			{
+				"fact" : "Years since Pennsylvania was established",
+				"value" : 233,
+				"answer" : "233 years"
+			},
+			{ 
+				"fact" : "Length of 5th Ave in feet",
+				"value" : 29500,
+				"answer" : "29,500 feet"
+			},
+			{
+				"fact" : "Steps at the Rocky Steps",
+				"value" : 72,
+				"answer" : "72 Rocky Steps"
+			},
+			{
+				"fact" : "State universities in Pennsylvania",
+				"value" : 14,
+				"answer" : "14 state universities"
+			}
+		],
+		"1" :
+		[
+			{ 
+				"fact" : "Species of bird in Pennsylvania",
+				"value" : 432,
+				"answer" : "432 bird species"
+			},
+			{
+				"fact" : "Counties in Pennsylvania",
+				"value" : 67,
+				"answer" : "67 counties"
+			},
+			{
+				"fact" : "Trees in Pennsylvania",
+				"value" : 100000,
+				"answer" : "16 billion trees"
+			}
+		],
+		"2":
+		[
+			{ 
+				"fact" : "Miles of roadway maintained by PA state agencies",
+				"value" : 41643,
+				"answer" : "41,643 miles of roadway"
+			},
+			{
+				"fact" : "Seconds it takes to drive from Lancaster to Philadelphia",
+				"value" : 4980,
+				"answer" : "4,980 seconds"
 			}
 		]
 	}
