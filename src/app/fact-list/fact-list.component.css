@@ -221,7 +221,7 @@ div #final-facts-list
 	right: 60px;
 	min-height: 480px;
 	*/
-	height: 550px;
+	height: 590px;
 	width: 100%;
 }
 
@@ -239,18 +239,10 @@ div.newFactBox, div.finalFactBox, div.newFactPlaceholder, div.finalFactPlacehold
 	box-shadow: 0px 0px 5px 2px #111;
 }
 
-.newFactBox
+.newFactBox, .finalFactBox
 {
 	width: 450px;
-	height: 48px;
-	padding: 18px 10px;
-	margin: 12px auto;
-}
-
-.finalFactBox
-{
-	width: 450px;
-	height: 48px;
+	height: 52px;
 	padding: 18px 10px;
 	margin: 12px auto;
 }
@@ -320,7 +312,7 @@ div.newFactPlaceholderContainer
 
 div.finalFactPlaceholderContainer
 {
-	height: 550px;
+	height: 590px;
 }
 
 div.newFactPlaceholder, div.finalFactPlaceholder
@@ -331,28 +323,15 @@ div.newFactPlaceholder, div.finalFactPlaceholder
 	box-shadow: 0px 5px 5px #111
 }
 
-div.newFactPlaceholder
+div.newFactPlaceholder, div.finalFactPlaceholder, .cdk-drag-preview, .cdk-drag-placeholder
 {
 	width: 450px;
-	height: 48px;
+	height: 52px;
 	padding: 18px 10px;
 	margin: 12px auto;
 }
 
-div.finalFactPlaceholder
-{
-	width: 450px;
-	height: 48px;
-	padding: 18px 10px;
-	margin: 12px auto;
-}
-
-.cdk-drag-preview {
-	width: 450px;
-	height: 48px;
-	padding: 18px 10px;
-	margin: 12px auto;
-	
+.cdk-drag-preview {	
 	box-sizing: border-box;
 	border-radius: 4px;
 	box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
@@ -361,9 +340,6 @@ div.finalFactPlaceholder
 }
 
 .cdk-drag-placeholder {
-	width: 450px;
-	height: 48px;
-	padding: 18px 10px;
 	opacity: 0;
 }
 
