@@ -68,11 +68,6 @@
 				"value" : 7,
 				"answer" : "7 letters"
 			},
-			{
-				"fact" : "The year “All I Want for Christmas” reached Number 1 on the Billboard Hot 100",
-				"value" : 2019,
-				"answer" : "2019"
-			},
 			{ 
 				"fact" : "Number of gifts the singer received in “The 12 Days of Christmas”",
 				"value" : 364,
@@ -82,6 +77,11 @@
 				"fact" : "Highest spot “The Chanukah Song” reached on the Billboard Hot 100",
 				"value" : 80,
 				"answer" : "80"
+			},
+			{
+				"fact" : "You’re a mean one Mr. Grinch: I wouldn’t touch you with a ______ foot pole",
+				"value" : 39,
+				"answer" : "39 and a half"
 			}
 		],
 		"1" :
@@ -97,10 +97,10 @@
 				"answer" : "2 times"
 			},
 			{
-				"fact" : "You’re a mean one Mr. Grinch: I wouldn’t touch you with a ______ foot pole",
-				"value" : 39,
-				"answer" : "39 and a half"
-			}			
+				"fact" : "Year “All I Want for Christmas” reached Number 1 on the Billboard Hot 100",
+				"value" : 2019,
+				"answer" : "2019"
+			}
 		],
 		"2":
 		[
@@ -133,15 +133,15 @@
 				"answer" : "105 gold medals"
 			},
 			{
-				"fact" : "Number Mario Lemieux wore when he played with the Penguins",
-				"value" : 66,
-				"answer" : "66"
-			},
-			{
 				"fact" : "Number of official sports in the Winter Olympics",
 				"value" : 15,
 				"answer" : "15 sports"
-			}			
+			},
+			{
+				"fact" : "Capacity at PPG Arena for Hockey Games",
+				"value" : 18387,
+				"answer" : "18,387 seats"
+			}		
 		],
 		"1" :
 		[
@@ -151,6 +151,19 @@
 				"answer" : "5 Pittsburgh athletes"
 			},
 			{
+				"fact" : "Amount the most expensive Winter Olympics cost",
+				"value" : 51000000,
+				"answer" : "$51 billion"
+			},
+			{
+				"fact" : "Number Mario Lemieux wore when he played with the Penguins",
+				"value" : 66,
+				"answer" : "66"
+			}			
+		],
+		"2":
+		[
+			{
 				"fact" : "Number of women on Team USA in the 2018 Winter Olympics",
 				"value" : 244,
 				"answer" : "244 women"
@@ -159,19 +172,6 @@
 				"fact" : "Years since the Penguins were founded",
 				"value" : 53,
 				"answer" : "53 years"
-			}
-		],
-		"2":
-		[
-			{
-				"fact" : "Amount of money the most expensive Winter Olympics cost",
-				"value" : 51000000,
-				"answer" : "$51 billion"
-			},
-			{ 
-				"fact" : "Year Sidney Crosby made the game-winning goal for the gold medal for Canada",
-				"value" : 2010,
-				"answer" : "2010"
 			}
 		]
 	},
@@ -214,10 +214,10 @@
 				"value" : 1308,
 				"answer" : "1,308 pounds"
 			},
-			{
-				"fact" : "Percent of people in America that drink hot chocolate",
-				"value" : 34,
-				"answer" : "34%"
+			{ 
+				"fact" : "Number of strands in traditional Challah bread",
+				"value" : 3,
+				"answer" : "3 strands"
 			}
 		],
 		"2":
@@ -227,10 +227,10 @@
 				"value" : 1607,
 				"answer" : "1607"
 			},
-			{ 
-				"fact" : "Number of strands in traditional Challah bread",
-				"value" : 3,
-				"answer" : "3 strands"
+			{
+				"fact" : "Percent of people in America that drink hot chocolate",
+				"value" : 34,
+				"answer" : "34%"
 			}
 		]
 	},
@@ -245,10 +245,10 @@
 				"value" : 84,
 				"answer" : "84 times"
 			},
-			{ 
-				"fact" : "Pitt Program Council events since 2016",
-				"value" : 354,
-				"answer" : "354 Pitt Program Council events"
+			{
+				"fact" : "Words in the longest sentence in a book",
+				"value" : 823,
+				"answer" : "823 words"
 			},
 			{
 				"fact" : "Episodes of Family Feud among all hosts",
@@ -264,7 +264,7 @@
 		"1" :
 		[
 			{ 
-				"fact" : "Hits needed to win Battleship",
+				"fact" : "Hits needed to win in Battleship",
 				"value" : 17,
 				"answer" : "17 hits"
 			},
