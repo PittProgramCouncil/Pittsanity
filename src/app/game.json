@@ -4,25 +4,25 @@
 		"title" : "Winter Weather",
 		"0" :
 		[
+			{
+				"fact" : "Year in which the lowest temperature in Pittsburgh was recorded",
+				"value" : 1948,
+				"answer" : "1948"
+			},
 			{ 
 				"fact" : "Lowest recorded temperature in Pittsburgh (Fahrenheit)",
 				"value" : -22,
 				"answer" : "-22 degrees"
 			},
 			{
-				"fact" : "Number of days into the year the Winter Solstice takes place",
-				"value" : 355,
-				"answer" : "355 feet"
-			},
-			{
-				"fact" : "Year in which the lowest temperature in Pittsburgh was recorded",
-				"value" : 1948,
-				"answer" : "1948"
-			},
-			{
 				"fact" : "Year of the most recent significant snowfall in Pittsburgh",
 				"value" : 1961,
 				"answer" : "1961"
+			},
+			{
+				"fact" : "Number of days into the year the Winter Solstice takes place",
+				"value" : 355,
+				"answer" : "355 feet"
 			}
 		],
 		"1" :
@@ -45,15 +45,15 @@
 		],
 		"2":
 		[
-			{ 
-				"fact" : "Temperature at which rain turns to snow (Fahrenheit)",
-				"value" : 32,
-				"answer" : "32 degrees"
-			},
 			{
 				"fact" : "Year in which Pittsburgh had its earliest snowfall",
 				"value" : 1989,
 				"answer" : "1989"
+			},
+			{ 
+				"fact" : "Temperature at which rain turns to snow (Fahrenheit)",
+				"value" : 32,
+				"answer" : "32 degrees"
 			}
 		]
 	},
@@ -63,38 +63,38 @@
 		"title" : "Holiday Movies",
 		"0" :
 		[
-			{
-				"fact" : "Number of characters Tom Hank plays in the Polar Express",
-				"value" : 6,
-				"answer" : "6 Polar Express characters"
-			},
-			{
-				"fact" : "Number of family members that sat at the dinner table for turkey dinner in Christmas Vacation",
-				"value" : 14,
-				"answer" : "14 family members"
-			},
 			{ 
 				"fact" : "Miracle on _th Street",
 				"value" : 34,
 				"answer" : "34th Street"
 			},
 			{
+				"fact" : "Number of characters Tom Hank plays in the Polar Express",
+				"value" : 6,
+				"answer" : "6 Polar Express characters"
+			},
+			{
 				"fact" : "Year that How the Grinch Stole Christmas won an Academy Award for best hair and makeup",
 				"value" : 2000,
 				"answer" : "2000"
+			},
+			{
+				"fact" : "Number of family members that sat at the dinner table for turkey dinner in Christmas Vacation",
+				"value" : 14,
+				"answer" : "14 family members"
 			}
 		],
 		"1" :
 		[
-			{ 
-				"fact" : "Number of ornaments on the Whoville christmas tree in How the Grinch Stole Christmas",
-				"value" : 8200,
-				"answer" : "8,200 ornaments"
-			},
 			{
 				"fact" : "Number of food groups Buddy and the elves try to stick to",
 				"value" : 4,
 				"answer" : "4 food groups"
+			},
+			{ 
+				"fact" : "Number of ornaments on the Whoville christmas tree in How the Grinch Stole Christmas",
+				"value" : 8200,
+				"answer" : "8,200 ornaments"
 			},
 			{
 				"fact" : "Number of lightbulbs Clark Griswald decorated his house with",
@@ -104,15 +104,15 @@
 		],
 		"2":
 		[
-			{ 
-				"fact" : "Number of rules when it comes to hot chocolate in the Polar Express",
-				"value" : 1,
-				"answer" : "1 rule"
-			},
 			{
 				"fact" : "Number of toppings Buddy the Elf put on his breakfast spaghetti in Elf",
 				"value" : 5,
 				"answer" : "5 toppings"
+			},
+			{ 
+				"fact" : "Number of rules when it comes to hot chocolate in the Polar Express",
+				"value" : 1,
+				"answer" : "1 rule"
 			}
 		]
 	},
@@ -128,9 +128,9 @@
 				"answer" : "7 letters"
 			},
 			{
-				"fact" : "Highest spot “The Chanukah Song” reached on the Billboard Hot 100",
-				"value" : 80,
-				"answer" : "80"
+				"fact" : "The year “All I Want for Christmas” reached Number 1 on the Billboard Hot 100",
+				"value" : 2019,
+				"answer" : "2019"
 			},
 			{ 
 				"fact" : "Number of gifts the singer received in “The 12 Days of Christmas”",
@@ -138,13 +138,18 @@
 				"answer" : "364 gifts"
 			},
 			{
-				"fact" : "The year “All I Want for Christmas” reached Number 1 on the Billboard Hot 100",
-				"value" : 2019,
-				"answer" : "2019"
+				"fact" : "Highest spot “The Chanukah Song” reached on the Billboard Hot 100",
+				"value" : 80,
+				"answer" : "80"
 			}
 		],
 		"1" :
 		[
+			{ 
+				"fact" : "Year “Last Christmas” by Wham! was released",
+				"value" : 1984,
+				"answer" : "1984"
+			},
 			{ 
 				"fact" : "Number of times Santa checks his list in “Santa Claus is Coming to Town”",
 				"value" : 2,
@@ -154,12 +159,7 @@
 				"fact" : "You’re a mean one Mr. Grinch: I wouldn’t touch you with a ______ foot pole",
 				"value" : 39,
 				"answer" : "39 and a half"
-			},
-			{ 
-				"fact" : "Year “Last Christmas” by Wham! was released",
-				"value" : 1984,
-				"answer" : "1984"
-			}
+			}			
 		],
 		"2":
 		[
@@ -182,14 +182,9 @@
 		"0" :
 		[
 			{
-				"fact" : "Number of official sports in the Winter Olympics",
-				"value" : 15,
-				"answer" : "15 sports"
-			},
-			{
-				"fact" : "Number Mario Lemieux wore when he played with the Penguins",
-				"value" : 66,
-				"answer" : "66"
+				"fact" : "Year of the first Winter Olympic Games",
+				"value" : 1924,
+				"answer" : "1924"
 			},
 			{ 
 				"fact" : "Total number of gold medals USA won at the Winter Olympics",
@@ -197,10 +192,15 @@
 				"answer" : "105 gold medals"
 			},
 			{
-				"fact" : "Year of the first Winter Olympic Games",
-				"value" : 1924,
-				"answer" : "1924"
-			}
+				"fact" : "Number Mario Lemieux wore when he played with the Penguins",
+				"value" : 66,
+				"answer" : "66"
+			},
+			{
+				"fact" : "Number of official sports in the Winter Olympics",
+				"value" : 15,
+				"answer" : "15 sports"
+			}			
 		],
 		"1" :
 		[
@@ -222,15 +222,15 @@
 		],
 		"2":
 		[
-			{ 
-				"fact" : "Year Sidney Crosby made the game-winning goal for the gold medal for Canada",
-				"value" : 2010,
-				"answer" : "2010"
-			},
 			{
 				"fact" : "Amount of money the most expensive Winter Olympics cost",
 				"value" : 51000000,
 				"answer" : "$51 billion"
+			},
+			{ 
+				"fact" : "Year Sidney Crosby made the game-winning goal for the gold medal for Canada",
+				"value" : 2010,
+				"answer" : "2010"
 			}
 		]
 	},
@@ -240,11 +240,6 @@
 		"title" : "Winter Food",
 		"0" :
 		[
-			{
-				"fact" : "Number of desserts eaten at a traditional French holiday celebration",
-				"value" : 13,
-				"answer" : "13 desserts"
-			},
 			{ 
 				"fact" : "Length of the world’s longest candy cane in feet",
 				"value" : 51,
@@ -254,6 +249,11 @@
 				"fact" : "Year fruit cake was invented",
 				"value" : 1400,
 				"answer" : "1400"
+			},
+			{
+				"fact" : "Number of desserts eaten at a traditional French holiday celebration",
+				"value" : 13,
+				"answer" : "13 desserts"
 			},
 			{
 				"fact" : "Number of households that serve cookies to Santa Claus in the U.S",
@@ -269,27 +269,27 @@
 				"answer" : "12 grapes"
 			},
 			{
-				"fact" : "Percent of people in America that drink hot chocolate",
-				"value" : 34,
-				"answer" : "34%"
-			},
-			{
 				"fact" : "Number of pounds the largest gingerbread man weighed",
 				"value" : 1308,
 				"answer" : "1,308 pounds"
+			},
+			{
+				"fact" : "Percent of people in America that drink hot chocolate",
+				"value" : 34,
+				"answer" : "34%"
 			}
 		],
 		"2":
 		[
-			{ 
-				"fact" : "Number of strands in traditional Challah bread",
-				"value" : 3,
-				"answer" : "3 strands"
-			},
 			{
 				"fact" : "Year the first eggnog drink was made",
 				"value" : 1607,
 				"answer" : "1607"
+			},
+			{ 
+				"fact" : "Number of strands in traditional Challah bread",
+				"value" : 3,
+				"answer" : "3 strands"
 			}
 		]
 	},
